@@ -1,0 +1,73 @@
+[
+  {
+    "title": "Issue triage",
+    "description": "Review the latest GitHub issues and propose priorities and owners.",
+    "values": {
+      "name": "Issue triage",
+      "prompt": "Review the latest GitHub issues and propose priorities and owners.",
+      "interval": "daily",
+      "schedule_hour": 9
+    }
+  },
+  {
+    "title": "Changelog draft",
+    "description": "Summarize key merged PRs this week into a release-note draft.",
+    "values": {
+      "name": "Changelog draft",
+      "prompt": "Summarize key merged PRs this week into a release-note draft.",
+      "interval": "weekly",
+      "schedule_day": 1,
+      "schedule_hour": 10
+    }
+  },
+  {
+    "title": "Repo audit",
+    "description": "Audit open PRs and identify blockers or risky changes.",
+    "values": {
+      "name": "Repo audit",
+      "prompt": "Audit open PRs and identify blockers or risky changes.",
+      "interval": "manual"
+    }
+  },
+  {
+    "title": "Telemetry review",
+    "description": "Review a PR for user-facing changes and suggest required telemetry events and properties.",
+    "values": {
+      "name": "Telemetry review",
+      "prompt": "Review the current PR diff for user-facing product changes. Identify whether telemetry is required for new or changed feature usage, feature states, settings enablement, staff/non-staff analysis, unique-user analysis, and user-visible failure states. If telemetry is needed, draft concrete event names, safe low-cardinality properties, restricted properties for sensitive diagnostics, and the frontend or backend owner for each event. If telemetry is not needed, explain why.",
+      "interval": "manual"
+    }
+  },
+  {
+    "title": "Performance improvements",
+    "description": "Identify 10 performance improvements, then open a PR for the highest-impact, lowest-effort one.",
+    "values": {
+      "name": "Performance improvements",
+      "prompt": "Identify 10 performance improvements, then open a PR for the highest-impact, lowest-effort one.",
+      "interval": "weekly",
+      "schedule_day": 3,
+      "schedule_hour": 9
+    }
+  },
+  {
+    "title": "Accessibility audit",
+    "description": "Review PRs merged yesterday and summarize any accessibility issues.",
+    "values": {
+      "name": "Accessibility audit",
+      "prompt": "Review PRs merged yesterday and summarize any accessibility issues.",
+      "interval": "daily",
+      "schedule_hour": 8
+    }
+  },
+  {
+    "title": "Cost tips",
+    "description": "Get personalized tips to reduce token usage and cost.",
+    "values": {
+      "name": "Cost tips",
+      "prompt": "/chronicle cost-tips",
+      "interval": "weekly",
+      "schedule_day": 1,
+      "schedule_hour": 9
+    }
+  }
+]

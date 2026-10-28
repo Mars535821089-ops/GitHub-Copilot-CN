@@ -1,0 +1,94 @@
+{
+  "appVersion": "1.1.33",
+  "installedPath": "/Applications/GitHub Copilot.app",
+  "installedMainExecutableSha256": "cd09695c67ac6368894aad6c5c2fb4d74871d9972b864b3b724855762006481b",
+  "strictBundleSignatureVerified": true,
+  "sameLocalIdentityOnMainAndModelLibraries": true,
+  "libraryValidationDisabled": false,
+  "hardenedRuntimePreserved": true,
+  "uiAudit": {
+    "scannedJavaScriptBundles": 1065,
+    "staticDisplayLiteralReplacements": 16859,
+    "renderBoundaryMappings": 7472,
+    "renderModulesChanged": 167,
+    "nativeExperimentPhrasesMapped": 275,
+    "nativeHumanTextCandidatesAudited": 304,
+    "builtInAutomationTemplates": 7,
+    "automationTemplateSeedsChanged": 13,
+    "dictionaryEntries": 15693,
+    "compileErrors": [],
+    "scope": "UI literal/dataflow/native metadata/stock templates/hidden status labels/placeholders/dates; not user text or unknown future server strings",
+    "userSavedPromptsOrAutomationsChanged": false,
+    "networkOrNodeSettingsChanged": false,
+    "providerOrModelIdsRewritten": false,
+    "templates": [
+      {
+        "template": "Issue triage",
+        "initialNameChinese": "议题分诊",
+        "promptChineseOrCommand": true,
+        "originalTriggerPreserved": true
+      },
+      {
+        "template": "Changelog draft",
+        "initialNameChinese": "更新日志草稿",
+        "promptChineseOrCommand": true,
+        "originalTriggerPreserved": true
+      },
+      {
+        "template": "Repo audit",
+        "initialNameChinese": "仓库审查",
+        "promptChineseOrCommand": true,
+        "originalTriggerPreserved": true
+      },
+      {
+        "template": "Telemetry review",
+        "initialNameChinese": "遥测审查",
+        "promptChineseOrCommand": true,
+        "originalTriggerPreserved": true
+      },
+      {
+        "template": "Performance improvements",
+        "initialNameChinese": "性能改进",
+        "promptChineseOrCommand": true,
+        "originalTriggerPreserved": true
+      },
+      {
+        "template": "Accessibility audit",
+        "initialNameChinese": "无障碍审查",
+        "promptChineseOrCommand": true,
+        "originalTriggerPreserved": true
+      },
+      {
+        "template": "Cost tips",
+        "initialNameChinese": "成本优化建议",
+        "promptChineseOrCommand": true,
+        "originalTriggerPreserved": true
+      }
+    ]
+  },
+  "structuralVerification": {
+    "checkedBundles": 249,
+    "controlFlowAndAstPreserved": true,
+    "mismatches": []
+  },
+  "behaviorTestsPassed": 38,
+  "voiceModelRepair": {
+    "realAppLogRootCause": "本地补丁主程序与模型动态库的签名团队不一致，导致 dlopen 被系统拒绝",
+    "finalAppNativeLibrariesVerifiedByHardenedSignedHarness": true,
+    "catalogModels": 81,
+    "speechModels": 9,
+    "defaultVoiceAliasPreserved": "nemotron-speech-streaming-en-0.6b",
+    "actualMicrophoneTranscriptionTested": false,
+    "newModelDownloaded": false
+  },
+  "restartRequested": false,
+  "reloadRequested": false,
+  "applicationOpenedByThisTurn": false,
+  "newPermissionRequestsIssuedByAgent": false,
+  "runningPidsBefore": [],
+  "samePidsPreserved": [],
+  "activation": "下次正常完全退出并重新打开应用时加载；没有启动或重启应用。",
+  "globalProxyOrNodeSettingsChanged": false,
+  "originalBackup": "恢复原版/GitHub Copilot.app",
+  "recoverCommand": "恢复英文原版.command"
+}

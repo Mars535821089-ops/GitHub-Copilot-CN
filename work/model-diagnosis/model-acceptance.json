@@ -1,0 +1,19 @@
+{
+  "hardenedRuntime": true,
+  "libraryValidationDisabled": false,
+  "matchingLocalSigningIdentity": true,
+  "modelCatalogCount": 81,
+  "speechRecognitionModels": 9,
+  "defaultVoiceModelPresent": true,
+  "modelAliases": [
+    "nemotron-speech-streaming-en-0.6b",
+    "nemotron-speech-streaming-es-0.6b",
+    "whisper-base",
+    "whisper-tiny",
+    "whisper-large-v3-turbo",
+    "whisper-medium",
+    "whisper-small",
+    "nemotron-3.5-asr-streaming-0.6b",
+    "parakeet-tdt-0.6b-v2"
+  ]
+}

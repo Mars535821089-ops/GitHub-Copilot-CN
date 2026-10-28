@@ -1,0 +1,5 @@
+const fs=require('fs'),acorn=require('../runtime/node_modules/acorn'),walk=require('../runtime/node_modules/acorn-walk');
+const file=fs.readdirSync('work/research/local-ui-assets/assets').find(f=>f.startsWith('WorkflowTemplatesContent-'));const src=fs.readFileSync('work/research/local-ui-assets/assets/'+file,'utf8');
+function key(p){return p.key.name??p.key.value}function scalar(n){if(n?.type==='Literal')return n.value;if(n?.type==='TemplateLiteral'&&!n.expressions.length)return n.quasis[0].value.cooked;return null}const records=[];
+walk.simple(acorn.parse(src,{ecmaVersion:'latest',sourceType:'module'}),{ObjectExpression(n){let props=Object.fromEntries(n.properties.filter(p=>p.type==='Property').map(p=>[key(p),p.value]));if(!props.title||props.values?.type!=='ObjectExpression')return;const values=Object.fromEntries(props.values.properties.filter(p=>p.type==='Property').map(p=>[key(p),scalar(p.value)]));records.push({title:scalar(props.title),description:scalar(props.description),values})}});
+fs.writeFileSync('work/localization/builtin-automation-seeds.json',JSON.stringify(records,null,2));console.log(JSON.stringify(records,null,2));

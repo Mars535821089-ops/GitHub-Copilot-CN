@@ -1,0 +1,16 @@
+const test=require('node:test');const assert=require('node:assert/strict');
+let localize;try{({localize}=require('./localize.cjs'))}catch{localize=(s)=>({code:s,changed:0})}
+const dict={'New':'新建','Plan':'规划','Settings':'设置','Build':'构建','Remove':'移除','Delete':'删除','Hello':'你好','Search skills…':'搜索技能…'};
+test('renders JSX text in Chinese',()=>{assert.match(localize('x.jsx("button",{children:`New`})',dict).code,/children:["`]新建["`]/)});
+test('preserves route enums, dictionary keys and keyboard names',()=>{const source='const a={New:1,id:`New`,path:`Settings`,type:`Build`};if(e.key===`Delete`)a.New=2;';assert.equal(localize(source,dict).code,source)});
+test('translates label but preserves value and callback arguments',()=>{const s=localize('const a={label:`Plan`,value:`Plan`,onClick:()=>go(`Settings`)}',dict).code;assert.match(s,/label:["`]规划["`]/);assert.match(s,/value:`Plan`/);assert.match(s,/go\(`Settings`\)/)});
+test('translates aria labels and placeholders',()=>{const s=localize('x.jsx("input",{"aria-label":`Settings`,placeholder:`Search skills…`})',dict).code;assert.match(s,/设置/);assert.match(s,/搜索技能/)});
+test('does not translate user prompt, editable values or product content',()=>{const s='const a={prompt:`Hello`,content:`Hello`,value:`Hello`,message:`Hello`};';assert.equal(localize(s,dict).code,s)});
+test('keeps dynamic template expressions intact',()=>{const s=localize('x.jsx("button",{title:`Remove ${name}`})',{'Remove ${0}':'移除 ${0}'}).code;assert.match(s,/移除 \$\{name\}/)});
+test('handles nested rendered conditional text',()=>{const s=localize('x.jsx("button",{children:flag?`New`:`Settings`})',dict).code;assert.match(s,/新建/);assert.match(s,/设置/)});
+test('never translates an expression inside a displayed template',()=>{const source='x.jsx("button",{title:`Remove ${name??`New`}`})';const s=localize(source,{'New':'新建','Remove ${0}':'移除 ${0}'}).code;assert.match(s,/移除 \$\{name\?\?`New`\}/)});
+test('translates fixed display sentences returned by view helpers',()=>{const s=localize('function help(){return `Automatically launch GitHub Copilot when you log in to your computer.`}',{'Automatically launch GitHub Copilot when you log in to your computer.':'登录电脑时自动启动 GitHub Copilot。'}).code;assert.match(s,/登录电脑时自动启动/)});
+test('translates display-only kind helper without changing its enum',()=>{const s=localize('function kind(v){if(v===`skill`)return `Skill`}',{'skill':'技能','Skill':'技能'}).code;assert.match(s,/===`skill`/);assert.match(s,/return ["`]技能/)});
+test('preserves computed dictionary lookup keys even inside rendered children',()=>{const source='x.jsx("div",{children:labels[`New`]})';assert.equal(localize(source,{'New':'新建'}).code,source)});
+test('rejects a translation that reorders or duplicates template expressions',()=>{assert.throws(()=>localize('x.jsx("p",{children:`Remove ${name} from ${host}`})',{'Remove ${0} from ${1}':'从${1}移除${0}'}),/template expression order/)});
+test('preserves protocol error sentinels shared by constructors and comparisons',()=>{const source='const text=`Voice models are temporarily rate limited. Try again shortly.`;function limited(e){return e.message===`Voice models are temporarily rate limited. Try again shortly.`}';assert.equal(localize(source,{'Voice models are temporarily rate limited. Try again shortly.':'语音模型暂时受到速率限制。'}).code,source)});

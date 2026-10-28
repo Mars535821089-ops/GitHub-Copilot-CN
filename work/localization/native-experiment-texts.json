@@ -1,0 +1,1377 @@
+[
+  {
+    "text": "Agentic search",
+    "offset": 239029985,
+    "length": 14
+  },
+  {
+    "text": "Enable agentic search through GitHub MCP. Requires agentic search access on the selected account.",
+    "offset": 239029999,
+    "length": 97
+  },
+  {
+    "text": "GitHub MCP staging",
+    "offset": 239030114,
+    "length": 18
+  },
+  {
+    "text": "Use staging for all built-in GitHub MCP tools. Requires DevVPN.",
+    "offset": 239030132,
+    "length": 63
+  },
+  {
+    "text": "MCP Tasks",
+    "offset": 239030204,
+    "length": 9
+  },
+  {
+    "text": "Enable MCP Tasks in local sessions. Turn off to test fallback tools.",
+    "offset": 239030213,
+    "length": 68
+  },
+  {
+    "text": "Responsive workspace changes",
+    "offset": 239030316,
+    "length": 28
+  },
+  {
+    "text": "Retain known change counts and throttle speculative Git work independently of foreground reads.",
+    "offset": 239030344,
+    "length": 95
+  },
+  {
+    "text": "Jack-o'-lantern mascot",
+    "offset": 239030458,
+    "length": 22
+  },
+  {
+    "text": "Give Mona a carved 3D pumpkin head that follows her body's monochrome rendering.",
+    "offset": 239030480,
+    "length": 80
+  },
+  {
+    "text": "Windows ML local models",
+    "offset": 239030589,
+    "length": 23
+  },
+  {
+    "text": "Download and run Windows ML models on this device.",
+    "offset": 239030612,
+    "length": 50
+  },
+  {
+    "text": "Local model auto routing",
+    "offset": 239030690,
+    "length": 24
+  },
+  {
+    "text": "Let Auto route turns to supported on-device models. Takes effect for sessions you start after turning this on. Local models may not use the same safety filters as GitHub Copilot-provided models and may be more susceptible to malicious instructions, especially when actions are automatically approved.",
+    "offset": 239030714,
+    "length": 300
+  },
+  {
+    "text": "Lightweight workspace change summaries",
+    "offset": 239031049,
+    "length": 38
+  },
+  {
+    "text": "Read local workspace change counts without preparing full diff contents until the Changes panel is opened.",
+    "offset": 239031087,
+    "length": 106
+  },
+  {
+    "text": "Azure DevOps extension",
+    "offset": 239031215,
+    "length": 22
+  },
+  {
+    "text": "Enable Azure DevOps support. When Azure DevOps plugin activation is enabled, installing the featured plugin also enables support independently of this setting.",
+    "offset": 239031237,
+    "length": 159
+  },
+  {
+    "text": "Azure DevOps plugin activation",
+    "offset": 239031436,
+    "length": 30
+  },
+  {
+    "text": "Automatically enable Azure DevOps support when the featured Azure DevOps plugin is installed.",
+    "offset": 239031466,
+    "length": 93
+  },
+  {
+    "text": "Google Workspace",
+    "offset": 239031575,
+    "length": 16
+  },
+  {
+    "text": "Create, preview, and edit Google Docs, Sheets, and Slides stored in Google Drive. Currently in a limited preview: your Google account must be added to Google's allow-list before you can sign in.",
+    "offset": 239031591,
+    "length": 194
+  },
+  {
+    "text": "Open canvases without a session",
+    "offset": 239031822,
+    "length": 31
+  },
+  {
+    "text": "Open supported canvases directly from the Canvas tab.",
+    "offset": 239031853,
+    "length": 53
+  },
+  {
+    "text": "GitHub Enterprise Server support",
+    "offset": 239031928,
+    "length": 32
+  },
+  {
+    "text": "GitHub Enterprise Server support is experimental. Not all features work yet. Please send feedback to help us improve support.",
+    "offset": 239031960,
+    "length": 125
+  },
+  {
+    "text": "Fix pull requests with instructions",
+    "offset": 239032119,
+    "length": 35
+  },
+  {
+    "text": "Add a chevron to pull request fix buttons with a \"Fix with instructions\" option that prefills the composer instead of running immediately.",
+    "offset": 239032154,
+    "length": 138
+  },
+  {
+    "text": "Asynchronous worktree fetch",
+    "offset": 239032322,
+    "length": 27
+  },
+  {
+    "text": "Start eligible worktree sessions from local refs while remote refs refresh in the background.",
+    "offset": 239032349,
+    "length": 93
+  },
+  {
+    "text": "Disable PR-based session renaming",
+    "offset": 239032479,
+    "length": 33
+  },
+  {
+    "text": "Stop the app from renaming existing sessions when a pull request is created or its title changes. Titles supplied by remote hosts such as copilotd still apply.",
+    "offset": 239032512,
+    "length": 159
+  },
+  {
+    "text": "Quiet marketplace notifications",
+    "offset": 239032712,
+    "length": 31
+  },
+  {
+    "text": "Show marketplace catalog status in Customize instead of as notifications.",
+    "offset": 239032743,
+    "length": 73
+  },
+  {
+    "text": "Bold unread sessions",
+    "offset": 239032846,
+    "length": 20
+  },
+  {
+    "text": "Emphasize unread session names with bold text in the sidebar.",
+    "offset": 239032866,
+    "length": 61
+  },
+  {
+    "text": "Custom sidebar sections",
+    "offset": 239032951,
+    "length": 23
+  },
+  {
+    "text": "Create and name custom sidebar sections to keep related sessions together, alongside pinned sessions and automatic sections.",
+    "offset": 239032974,
+    "length": 124
+  },
+  {
+    "text": "Project event subscriptions",
+    "offset": 239033151,
+    "length": 27
+  },
+  {
+    "text": "Let Projects subscribe to app and GitHub events and wake up when they happen. Subscriptions appear in the session side rail.",
+    "offset": 239033178,
+    "length": 124
+  },
+  {
+    "text": "Issue and pull request unread indicators",
+    "offset": 239033325,
+    "length": 40
+  },
+  {
+    "text": "Show unread indicators and filtering for issues and pull requests, with desktop notification delivery and automatic cleanup.",
+    "offset": 239033365,
+    "length": 124
+  },
+  {
+    "text": "Issue and pull request editing",
+    "offset": 239033512,
+    "length": 30
+  },
+  {
+    "text": "Turn on editing actions for issues and pull requests: edit titles and descriptions, edit, delete, and hide comments, and show an edited indicator. Every action applies to both issues and pull requests, in the detail and workspace views.",
+    "offset": 239033542,
+    "length": 236
+  },
+  {
+    "text": "Enhanced pull request reviewer picker",
+    "offset": 239033812,
+    "length": 37
+  },
+  {
+    "text": "Show current pull request reviewers as status rows with explicit remove and re-request actions.",
+    "offset": 239033849,
+    "length": 95
+  },
+  {
+    "text": "Approve pull request checks",
+    "offset": 239033971,
+    "length": 27
+  },
+  {
+    "text": "Show workflows waiting for maintainer approval and let repository writers approve them from pull request check panels.",
+    "offset": 239033998,
+    "length": 118
+  },
+  {
+    "text": "Closing issue references",
+    "offset": 239034150,
+    "length": 24
+  },
+  {
+    "text": "Show the pull requests that close an issue and the issues that a pull request closes.",
+    "offset": 239034174,
+    "length": 85
+  },
+  {
+    "text": "Session-scoped conversation updates",
+    "offset": 239034304,
+    "length": 35
+  },
+  {
+    "text": "Rerun a conversation's transcript only when its own session changes, not when any other agent session receives an event.",
+    "offset": 239034339,
+    "length": 120
+  },
+  {
+    "text": "Resource subscription ownership",
+    "offset": 239034500,
+    "length": 31
+  },
+  {
+    "text": "Keep live resource update channels open when an older subscription finishes closing after a replacement subscribes.",
+    "offset": 239034531,
+    "length": 115
+  },
+  {
+    "text": "Pull request hover cards",
+    "offset": 239034669,
+    "length": 24
+  },
+  {
+    "text": "Show a preview card with the repository, opened date, title, state, author, and branches when hovering a pull request link in a conversation or a pull request button on the Overview tab.",
+    "offset": 239034693,
+    "length": 186
+  },
+  {
+    "text": "Office canvases",
+    "offset": 239034892,
+    "length": 15
+  },
+  {
+    "text": "Open native Word, Excel, and PowerPoint canvases for Office artifacts, with structured viewing and editing backed by the in-app OOXML engine. Staff-only while in development.",
+    "offset": 239034907,
+    "length": 174
+  },
+  {
+    "text": "Gists canvas",
+    "offset": 239035103,
+    "length": 12
+  },
+  {
+    "text": "Browse, create, and edit your GitHub gists in a built-in canvas, open it with /gists, and let the agent work with your gists.",
+    "offset": 239035115,
+    "length": 125
+  },
+  {
+    "text": "Office and connector entry points",
+    "offset": 239035279,
+    "length": 33
+  },
+  {
+    "text": "Enable Office icebreakers, Create and Connectors menus, and OneDrive-backed Library entry points.",
+    "offset": 239035312,
+    "length": 97
+  },
+  {
+    "text": "Office experiences",
+    "offset": 239035432,
+    "length": 18
+  },
+  {
+    "text": "Create, view, and edit Office documents with rich, web-powered experiences. Currently supports Word, Excel, and PowerPoint. Takes effect after restart.",
+    "offset": 239035450,
+    "length": 151
+  },
+  {
+    "text": "Diff asset size stats",
+    "offset": 239035622,
+    "length": 21
+  },
+  {
+    "text": "Show byte-size deltas instead of line-count deltas for asset files in diff headers. Staff-only while asset previews are in development.",
+    "offset": 239035643,
+    "length": 135
+  },
+  {
+    "text": "Tour",
+    "offset": 239035806,
+    "length": 4
+  },
+  {
+    "text": "A read-only tour of the changes in a pull request.",
+    "offset": 239035810,
+    "length": 50
+  },
+  {
+    "text": "Tour in Files",
+    "offset": 239035886,
+    "length": 13
+  },
+  {
+    "text": "Show Diff and Tour inside the pull request Files tab instead of a separate Tour tab.",
+    "offset": 239035899,
+    "length": 84
+  },
+  {
+    "text": "Shared PR Tours",
+    "offset": 239036008,
+    "length": 15
+  },
+  {
+    "text": "Opening a PR's Tour automatically creates and uploads its first tour when none exists and you have repository write access. Everyone who can read the PR can reuse it. Source snapshots are not uploaded.",
+    "offset": 239036023,
+    "length": 201
+  },
+  {
+    "text": "Editable session diffs",
+    "offset": 239036255,
+    "length": 22
+  },
+  {
+    "text": "Edit a whole file directly from the All changes or Uncommitted changes diff.",
+    "offset": 239036277,
+    "length": 76
+  },
+  {
+    "text": "Bounded file watcher lifecycle",
+    "offset": 239036393,
+    "length": 30
+  },
+  {
+    "text": "Observe file watcher dispatch completion during shutdown and prevent replaced file subscriptions from publishing stale changes.",
+    "offset": 239036423,
+    "length": 127
+  },
+  {
+    "text": "Expand context in PR diffs",
+    "offset": 239036582,
+    "length": 26
+  },
+  {
+    "text": "Reveal unchanged lines around a hunk in a pull request diff. Context is fetched from the PR's commit over the network, unlike workspace diffs which read a local checkout.",
+    "offset": 239036608,
+    "length": 170
+  },
+  {
+    "text": "Browser options",
+    "offset": 239036793,
+    "length": 15
+  },
+  {
+    "text": "Add Find in Page (macOS and Windows), page zoom, and hard reload to the browser toolbar menu.",
+    "offset": 239036808,
+    "length": 93
+  },
+  {
+    "text": "Inline MCP Apps",
+    "offset": 239036909,
+    "length": 15
+  },
+  {
+    "text": "Render MCP App (SEP-1865) UI resources from connected MCP servers inline in the conversation. Apps can be opened in the side panel from the row, and a guest's fullscreen request opens the app in the side panel too. Takes effect after restart.",
+    "offset": 239036924,
+    "length": 242
+  },
+  {
+    "text": "Live Markdown File Editor",
+    "offset": 239037191,
+    "length": 25
+  },
+  {
+    "text": "Use windowed rendering and in-place section editing for a responsive Markdown file editing experience.",
+    "offset": 239037216,
+    "length": 102
+  },
+  {
+    "text": "Plan review composer",
+    "offset": 239037348,
+    "length": 20
+  },
+  {
+    "text": "Review plans in the real conversation composer instead of the one-line feedback field, with mentions, attachments, dictation, and references to specific plan text. Staff-only while in development.",
+    "offset": 239037368,
+    "length": 196
+  },
+  {
+    "text": "Autopilot goal pill",
+    "offset": 239037593,
+    "length": 19
+  },
+  {
+    "text": "Show runtime goal status and details in the composer and session utility rail.",
+    "offset": 239037612,
+    "length": 78
+  },
+  {
+    "text": "Session utility rail",
+    "offset": 239037720,
+    "length": 20
+  },
+  {
+    "text": "Replace composer pills with a right-side rail for session resources, launchers, sources, side chats, schedules, artifacts, and background work.",
+    "offset": 239037740,
+    "length": 143
+  },
+  {
+    "text": "Pause media during voice dictation",
+    "offset": 239037902,
+    "length": 34
+  },
+  {
+    "text": "Pause playing media while Voice dictation records and resume it afterward.",
+    "offset": 239037936,
+    "length": 74
+  },
+  {
+    "text": "Voice control",
+    "offset": 239038023,
+    "length": 13
+  },
+  {
+    "text": "Hold the voice key (Ctrl+Shift+Space) to speak one command, or tap it to keep listening. Say a control on screen to press it, a command to run it, or an answer to the agent's prompt. Anything risky asks first.",
+    "offset": 239038036,
+    "length": 209
+  },
+  {
+    "text": "Response artifacts",
+    "offset": 239038282,
+    "length": 18
+  },
+  {
+    "text": "Save completed agent responses as Markdown artifacts and open them in Files.",
+    "offset": 239038300,
+    "length": 76
+  },
+  {
+    "text": "Platform cache",
+    "offset": 239038390,
+    "length": 14
+  },
+  {
+    "text": "Legacy platform cache diagnostics. This flag does not enroll the local-first platform store.",
+    "offset": 239038404,
+    "length": 92
+  },
+  {
+    "text": "Platform store",
+    "offset": 239038510,
+    "length": 14
+  },
+  {
+    "text": "Staff opt-in for the local-first platform store and checks Shadow comparison. Legacy reads and actions remain authoritative.",
+    "offset": 239038524,
+    "length": 124
+  },
+  {
+    "text": "Platform data source indicators",
+    "offset": 239038679,
+    "length": 31
+  },
+  {
+    "text": "Show staff-only provenance and availability indicators for platform data.",
+    "offset": 239038710,
+    "length": 73
+  },
+  {
+    "text": "Impeccable design skill",
+    "offset": 239038793,
+    "length": 23
+  },
+  {
+    "text": "Adds /impeccable, a frontend design and UI-craft skill by Paul Bakaus (impeccable.style), bundled under Apache-2.0. Its optional automation scripts need Node 18+ on your PATH; without Node the agent falls back to the design guidance alone.",
+    "offset": 239038816,
+    "length": 239
+  },
+  {
+    "text": "Compact unified diff rows",
+    "offset": 239039080,
+    "length": 25
+  },
+  {
+    "text": "Show one shared line-number column in the unified diff instead of separate old/new columns. Deleted rows show '-'.",
+    "offset": 239039105,
+    "length": 114
+  },
+  {
+    "text": "Image diff previews",
+    "offset": 239039248,
+    "length": 19
+  },
+  {
+    "text": "Show fixed-height before and after previews for changed PNG, JPEG, and SVG files in local workspace diffs.",
+    "offset": 239039267,
+    "length": 106
+  },
+  {
+    "text": "Multi-window",
+    "offset": 239039385,
+    "length": 12
+  },
+  {
+    "text": "Open sessions in separate native windows for side-by-side multitasking.",
+    "offset": 239039397,
+    "length": 71
+  },
+  {
+    "text": "GitHub 2.0",
+    "offset": 239039491,
+    "length": 10
+  },
+  {
+    "text": "Bring core GitHub views into the app so they can be deep-linked to and feel familiar to the web version.",
+    "offset": 239039501,
+    "length": 104
+  },
+  {
+    "text": "Prioritize initial pull request loading",
+    "offset": 239039631,
+    "length": 39
+  },
+  {
+    "text": "Load the pull request record before prefetching metadata picker suggestions.",
+    "offset": 239039670,
+    "length": 76
+  },
+  {
+    "text": "Join in-flight pull request reads",
+    "offset": 239039775,
+    "length": 33
+  },
+  {
+    "text": "Opening a pull request panel joins compatible in-flight loading without invalidating its result.",
+    "offset": 239039808,
+    "length": 96
+  },
+  {
+    "text": "Board view",
+    "offset": 239039914,
+    "length": 10
+  },
+  {
+    "text": "Add a board layout to My Work that groups the current view's issues and pull requests into Backlog, Active, Needs attention, and Done columns derived from their state and linked session activity.",
+    "offset": 239039924,
+    "length": 195
+  },
+  {
+    "text": "Dashboards",
+    "offset": 239040139,
+    "length": 10
+  },
+  {
+    "text": "Create dashboards with configurable widgets for issues, pull requests, repository activity, and automations. Arrange and resize widgets in columns, and refine supported filters with Copilot.",
+    "offset": 239040149,
+    "length": 190
+  },
+  {
+    "text": "Custom dashboard widgets",
+    "offset": 239040373,
+    "length": 24
+  },
+  {
+    "text": "Create freeform list and chart widgets with Copilot using connected data sources.",
+    "offset": 239040397,
+    "length": 81
+  },
+  {
+    "text": "Issue artifacts",
+    "offset": 239040493,
+    "length": 15
+  },
+  {
+    "text": "Let agents attach plans and artifacts to GitHub issues, surface them in the issue viewer, and auto-upload approved plans.",
+    "offset": 239040508,
+    "length": 121
+  },
+  {
+    "text": "Memory",
+    "offset": 239040643,
+    "length": 6
+  },
+  {
+    "text": "Allow Copilot to store and retrieve user preferences and repository facts in new and resumed sessions.",
+    "offset": 239040649,
+    "length": 102
+  },
+  {
+    "text": "Keep local CLI alive while extensions are running",
+    "offset": 239040788,
+    "length": 49
+  },
+  {
+    "text": "Prevent an idle local CLI from being reclaimed while one of its session extensions is still running.",
+    "offset": 239040837,
+    "length": 100
+  },
+  {
+    "text": "Projects",
+    "offset": 239040947,
+    "length": 8
+  },
+  {
+    "text": "Create and manage persistent projects that coordinate work across tasks.",
+    "offset": 239040955,
+    "length": 72
+  },
+  {
+    "text": "GitHub agent",
+    "offset": 239041039,
+    "length": 12
+  },
+  {
+    "text": "Add a built-in GitHub agent under Projects that connects your repositories and services, looks around for work waiting on you, and starts other projects for bigger pieces of work.",
+    "offset": 239041051,
+    "length": 179
+  },
+  {
+    "text": "GitHub agent onboarding",
+    "offset": 239041253,
+    "length": 23
+  },
+  {
+    "text": "Open the built-in GitHub agent immediately after authentication instead of continuing through repository, theme, and settings migration.",
+    "offset": 239041276,
+    "length": 136
+  },
+  {
+    "text": "GitHub agent inbox composer pill",
+    "offset": 239041444,
+    "length": 32
+  },
+  {
+    "text": "Show the GitHub agent's inbox as a pill in its composer that opens a one-at-a-time carousel, instead of the Inbox entry in its side rail.",
+    "offset": 239041476,
+    "length": 137
+  },
+  {
+    "text": "My Copilot",
+    "offset": 239041628,
+    "length": 10
+  },
+  {
+    "text": "Add a persistent chief of staff that tracks your work and helps you focus on what needs attention next.",
+    "offset": 239041638,
+    "length": 103
+  },
+  {
+    "text": "Canvas discovery menu",
+    "offset": 239041762,
+    "length": 21
+  },
+  {
+    "text": "Replace the right rail \"+\" menu's raw \"Import canvas from gist/URL\" and \"Import canvas from repo\" actions with task-oriented \"Create a canvas\" and \"Discover more canvases\" entries.",
+    "offset": 239041783,
+    "length": 180
+  },
+  {
+    "text": "HydraFusion",
+    "offset": 239041984,
+    "length": 11
+  },
+  {
+    "text": "Let Copilot choose a model or combine work from multiple models for your task. Try HydraFusion instead of choosing a single model yourself. Research preview: experimental behavior may change.",
+    "offset": 239041995,
+    "length": 191
+  },
+  {
+    "text": "HydraFusion v2 policies",
+    "offset": 239042215,
+    "length": 23
+  },
+  {
+    "text": "Request v2 HydraFusion plans, which add per-phase reasoning effort, a wider model set, and subagents planned as the phase's model.",
+    "offset": 239042238,
+    "length": 130
+  },
+  {
+    "text": "HydraFusion sticky root",
+    "offset": 239042391,
+    "length": 23
+  },
+  {
+    "text": "Report the committed HydraFusion root to CAPI so v2 plans can keep a conversation's root model across turns.",
+    "offset": 239042414,
+    "length": 108
+  },
+  {
+    "text": "Rich composer",
+    "offset": 239042535,
+    "length": 13
+  },
+  {
+    "text": "Use the Lexical-based rich-text editor for prompts, PR and issue comments, and issue creation.",
+    "offset": 239042548,
+    "length": 94
+  },
+  {
+    "text": "New composer agent selection",
+    "offset": 239042678,
+    "length": 28
+  },
+  {
+    "text": "Custom agents are added from the + menu and shown as a removable chip. /agent commands and automation editors are unchanged.",
+    "offset": 239042706,
+    "length": 124
+  },
+  {
+    "text": "Managed model options",
+    "offset": 239042861,
+    "length": 21
+  },
+  {
+    "text": "Enforce managed model options in new supported local sessions. Existing sessions retain their original enforcement until restarted.",
+    "offset": 239042882,
+    "length": 131
+  },
+  {
+    "text": "Auto effort levels",
+    "offset": 239043023,
+    "length": 18
+  },
+  {
+    "text": "Choose whether Auto optimizes for efficiency, balance, or intelligence.",
+    "offset": 239043041,
+    "length": 71
+  },
+  {
+    "text": "Universe Announcements",
+    "offset": 239043134,
+    "length": 22
+  },
+  {
+    "text": "Show Universe announcements in place of the other product-update campaigns.",
+    "offset": 239043156,
+    "length": 75
+  },
+  {
+    "text": "Copilot Fusion",
+    "offset": 239043249,
+    "length": 14
+  },
+  {
+    "text": "Replace Auto with Copilot Fusion, whose effort levels come from the server. Turn off to keep Auto's static tiers and opt in to HydraFusion separately. Applies to new and resumed local sessions; cloud and remote sessions keep their tiers under the names Standard, High and Max.",
+    "offset": 239043263,
+    "length": 276
+  },
+  {
+    "text": "Image generation tool",
+    "offset": 239043558,
+    "length": 21
+  },
+  {
+    "text": "Generate images in conversations.",
+    "offset": 239043579,
+    "length": 33
+  },
+  {
+    "text": "Decision API tool",
+    "offset": 239043634,
+    "length": 17
+  },
+  {
+    "text": "Enable the decide tool for probabilities, classification, and scoring in local sessions. Staff experiments only. Do not send customer data.",
+    "offset": 239043651,
+    "length": 139
+  },
+  {
+    "text": "Quantified additional-usage figures",
+    "offset": 239043819,
+    "length": 35
+  },
+  {
+    "text": "Show the additional-usage budget as a quantified `X of Y AIC` figure in quota banners instead of qualitative copy. Off by default; falls back to the sentence copy when disabled.",
+    "offset": 239043854,
+    "length": 177
+  },
+  {
+    "text": "Repo metadata cache: warm",
+    "offset": 239044065,
+    "length": 25
+  },
+  {
+    "text": "Staff opt-in to warm a persistent cache for repository labels, milestones, and issue types while direct GitHub responses remain authoritative.",
+    "offset": 239044090,
+    "length": 142
+  },
+  {
+    "text": "Repo metadata cache: serve",
+    "offset": 239044257,
+    "length": 26
+  },
+  {
+    "text": "Serve repository labels, milestones, and issue types from the persistent cache using stale-while-revalidate.",
+    "offset": 239044283,
+    "length": 108
+  },
+  {
+    "text": "Native Rust runtime wrapper",
+    "offset": 239044411,
+    "length": 27
+  },
+  {
+    "text": "Run app-managed sessions, including Agency sessions, on the native Rust runtime. JavaScript extensions keep their existing host. Requires a restart.",
+    "offset": 239044438,
+    "length": 148
+  },
+  {
+    "text": "App client compatibility",
+    "offset": 239044620,
+    "length": 24
+  },
+  {
+    "text": "Refresh enterprise client compatibility in the background; require live admission only for previously managed accounts with stale or restricted evidence. Keep off until backend applicability is verified.",
+    "offset": 239044644,
+    "length": 203
+  },
+  {
+    "text": "Use bundled git",
+    "offset": 239044858,
+    "length": 15
+  },
+  {
+    "text": "Use the git binary shipped with the app instead of the system-installed one. Falls back to your system git when off.",
+    "offset": 239044873,
+    "length": 116
+  },
+  {
+    "text": "WSL hosts",
+    "offset": 239045000,
+    "length": 9
+  },
+  {
+    "text": "Discover WSL distributions and create sessions inside them.",
+    "offset": 239045009,
+    "length": 59
+  },
+  {
+    "text": "SSH and direct connections",
+    "offset": 239045086,
+    "length": 26
+  },
+  {
+    "text": "Run sessions on your own machines over SSH or a direct connection.",
+    "offset": 239045112,
+    "length": 66
+  },
+  {
+    "text": "Codespaces",
+    "offset": 239045210,
+    "length": 10
+  },
+  {
+    "text": "Discover and connect to your Codespaces.",
+    "offset": 239045220,
+    "length": 40
+  },
+  {
+    "text": "Remote access",
+    "offset": 239045287,
+    "length": 13
+  },
+  {
+    "text": "Register this machine as a Mission Control environment through this Copilot app. Access sessions created in this environment from another Copilot app while this app is open.",
+    "offset": 239045300,
+    "length": 173
+  },
+  {
+    "text": "Cloud",
+    "offset": 239045494,
+    "length": 5
+  },
+  {
+    "text": "Run each top-level session in a new cloud environment.",
+    "offset": 239045499,
+    "length": 54
+  },
+  {
+    "text": "Resume web sessions",
+    "offset": 239045567,
+    "length": 19
+  },
+  {
+    "text": "Open search, then choose \"Resume remote session\".",
+    "offset": 239045586,
+    "length": 49
+  },
+  {
+    "text": "Remote control",
+    "offset": 239045659,
+    "length": 14
+  },
+  {
+    "text": "Control local sessions from another device.",
+    "offset": 239045673,
+    "length": 43
+  },
+  {
+    "text": "WebSocket terminal transport",
+    "offset": 239045744,
+    "length": 28
+  },
+  {
+    "text": "Carry the embedded terminal's PTY traffic over the app's WebSocket instead of Tauri IPC. Restart the app after toggling.",
+    "offset": 239045772,
+    "length": 120
+  },
+  {
+    "text": "Disable TGrep",
+    "offset": 239045915,
+    "length": 13
+  },
+  {
+    "text": "Disable TGrep for new runtime processes in the verified organization or enterprise cohort.",
+    "offset": 239045928,
+    "length": 90
+  },
+  {
+    "text": "Assisted approvals",
+    "offset": 239046031,
+    "length": 18
+  },
+  {
+    "text": "Enable Assisted mode, which approves requests an LLM safety check deems safe and prompts otherwise. When you turn off this experiment, existing Assisted sessions change to Ask every time (Off). Agent Merge sessions change to Approve all.",
+    "offset": 239046049,
+    "length": 237
+  },
+  {
+    "text": "Assisted approvals general availability",
+    "offset": 239046317,
+    "length": 39
+  },
+  {
+    "text": "Remove the Experimental label from Assisted approvals.",
+    "offset": 239046356,
+    "length": 54
+  },
+  {
+    "text": "Assisted approvals by default",
+    "offset": 239046436,
+    "length": 29
+  },
+  {
+    "text": "Set Assisted as the default for new local sessions once. You can choose another default afterward in Settings > Sessions > Tool permissions. Existing sessions are unchanged.",
+    "offset": 239046465,
+    "length": 173
+  },
+  {
+    "text": "Assisted approval instructions",
+    "offset": 239046678,
+    "length": 30
+  },
+  {
+    "text": "Add personal guidance for how Assisted reviews tool calls in local sessions. Changes apply when a session starts.",
+    "offset": 239046708,
+    "length": 113
+  },
+  {
+    "text": "Agent merge instructions",
+    "offset": 239046845,
+    "length": 24
+  },
+  {
+    "text": "Add personal guidance for how Agent Merge handles review feedback, CI failures, and conflicts.",
+    "offset": 239046869,
+    "length": 94
+  },
+  {
+    "text": "Quiet background updates",
+    "offset": 239046992,
+    "length": 24
+  },
+  {
+    "text": "Keep routine Agent merge and coordinated-session updates quiet in the sidebar and desktop notifications. Results and decisions that need you still request attention.",
+    "offset": 239047016,
+    "length": 165
+  },
+  {
+    "text": "Agent merge uses safe auto-approval",
+    "offset": 239047206,
+    "length": 35
+  },
+  {
+    "text": "When Agent Merge is switched on for a workspace, move its session from Approve All to safe auto-approval instead of leaving it on Approve All.",
+    "offset": 239047241,
+    "length": 142
+  },
+  {
+    "text": "Agents can manage Agent merge",
+    "offset": 239047409,
+    "length": 29
+  },
+  {
+    "text": "Let agents read and change Agent merge for sessions they own, created, or coordinate.",
+    "offset": 239047438,
+    "length": 85
+  },
+  {
+    "text": "Agents can turn on Agent merge auto-merge",
+    "offset": 239047550,
+    "length": 41
+  },
+  {
+    "text": "Let agents ask to turn on Agent merge's Merge PR action. You still confirm each request in the app.",
+    "offset": 239047591,
+    "length": 99
+  },
+  {
+    "text": "Computer Use preview availability",
+    "offset": 239047710,
+    "length": 33
+  },
+  {
+    "text": "Control Computer Use preview availability without changing the user's saved preference.",
+    "offset": 239047743,
+    "length": 87
+  },
+  {
+    "text": "Computer Use",
+    "offset": 239047852,
+    "length": 12
+  },
+  {
+    "text": "Register the bundled Computer Use plugin so sessions can control local desktop apps.",
+    "offset": 239047864,
+    "length": 84
+  },
+  {
+    "text": "Copilot Connectors in MCP",
+    "offset": 239047958,
+    "length": 25
+  },
+  {
+    "text": "Browse and connect Copilot Connectors under MCP in Customize. Enabling MCP includes connectors; each service requires an explicit connection and consent. Your organization's MCP controls still apply.",
+    "offset": 239047983,
+    "length": 199
+  },
+  {
+    "text": "Offer Connectors based on session content",
+    "offset": 239048219,
+    "length": 41
+  },
+  {
+    "text": "Offer relevant Connectors when session content requires an external service capability that available tools cannot provide.",
+    "offset": 239048260,
+    "length": 123
+  },
+  {
+    "text": "Customize resources from GitHub",
+    "offset": 239048408,
+    "length": 31
+  },
+  {
+    "text": "Search for, add and manage MCP servers, Skills and plugins from GitHub in Customize.",
+    "offset": 239048439,
+    "length": 84
+  },
+  {
+    "text": "Software factories",
+    "offset": 239048541,
+    "length": 18
+  },
+  {
+    "text": "Show Automation groups and standalone Automations together, open Automations in a dedicated detail view, and create and manage repository-bound cloud Automations. Turning this off saves your preference, but these features remain available while the rollout enables them for your account. Your preference takes effect when that rollout no longer enables them. Saved resources and cloud Automations are unchanged.",
+    "offset": 239048559,
+    "length": 411
+  },
+  {
+    "text": "Copilot Dreaming activity",
+    "offset": 239048993,
+    "length": 25
+  },
+  {
+    "text": "Show recent Copilot Dreaming runs for your added repositories and your account in a Dreaming tab in Automations. Controlled by ExP, not a user toggle.",
+    "offset": 239049018,
+    "length": 150
+  },
+  {
+    "text": "Companion device integration",
+    "offset": 239049188,
+    "length": 28
+  },
+  {
+    "text": "Connect supported companion devices to navigate sessions, use voice input, and control integrations.",
+    "offset": 239049216,
+    "length": 100
+  },
+  {
+    "text": "Integrated Windows header",
+    "offset": 239049349,
+    "length": 25
+  },
+  {
+    "text": "Combine the app header and Windows window controls in a single bar. Windows only.",
+    "offset": 239049374,
+    "length": 81
+  },
+  {
+    "text": "Separate model and provider pickers",
+    "offset": 239049495,
+    "length": 35
+  },
+  {
+    "text": "Choose a logical model separately from the provider used to run it.",
+    "offset": 239049530,
+    "length": 67
+  },
+  {
+    "text": "Windows taskbar presence",
+    "offset": 239049624,
+    "length": 24
+  },
+  {
+    "text": "Show live session status as a Copilot agent icon and hover card on the Windows taskbar.",
+    "offset": 239049648,
+    "length": 87
+  },
+  {
+    "text": "ExP control-plane A/A pilot",
+    "offset": 239049755,
+    "length": 27
+  },
+  {
+    "text": "Validates ExP assignment delivery and attribution without changing product behavior.",
+    "offset": 239049782,
+    "length": 84
+  },
+  {
+    "text": "Enrique Moreno",
+    "offset": 239049887,
+    "length": 14
+  },
+  {
+    "text": "Alberto Gimeno",
+    "offset": 239049901,
+    "length": 14
+  },
+  {
+    "text": "Mike Sprague",
+    "offset": 239049925,
+    "length": 12
+  },
+  {
+    "text": "Auro",
+    "offset": 239049937,
+    "length": 4
+  },
+  {
+    "text": "Colby Williams",
+    "offset": 239049958,
+    "length": 14
+  },
+  {
+    "text": "Ani",
+    "offset": 239049972,
+    "length": 3
+  },
+  {
+    "text": "Maxime De Greve",
+    "offset": 239049985,
+    "length": 15
+  },
+  {
+    "text": "David Sterling",
+    "offset": 239050010,
+    "length": 14
+  },
+  {
+    "text": "Christopher Schleiden",
+    "offset": 239050034,
+    "length": 21
+  },
+  {
+    "text": "Austin Hodges",
+    "offset": 239050065,
+    "length": 13
+  },
+  {
+    "text": "Chris Dern",
+    "offset": 239050088,
+    "length": 10
+  },
+  {
+    "text": "Merlyn Oppenheim",
+    "offset": 239050122,
+    "length": 16
+  },
+  {
+    "text": "Pierce Boggan",
+    "offset": 239050138,
+    "length": 13
+  },
+  {
+    "text": "Aymen",
+    "offset": 239050161,
+    "length": 5
+  },
+  {
+    "text": "Paolo Tranquilli",
+    "offset": 239050176,
+    "length": 16
+  },
+  {
+    "text": "Mary White",
+    "offset": 239050243,
+    "length": 10
+  },
+  {
+    "text": "Matt Ellis",
+    "offset": 239050263,
+    "length": 10
+  },
+  {
+    "text": "Evan Boyle",
+    "offset": 239050303,
+    "length": 10
+  },
+  {
+    "text": "David Dossett",
+    "offset": 239050329,
+    "length": 13
+  },
+  {
+    "text": "Lichin Lin",
+    "offset": 239050352,
+    "length": 10
+  },
+  {
+    "text": "Jeremy Moseley",
+    "offset": 239050398,
+    "length": 14
+  },
+  {
+    "text": "Ismael Canal",
+    "offset": 239050412,
+    "length": 12
+  },
+  {
+    "text": "Moody (Emad Abdulrahim)",
+    "offset": 239050454,
+    "length": 23
+  },
+  {
+    "text": "Cam McHenry",
+    "offset": 239050487,
+    "length": 11
+  },
+  {
+    "text": "Tyler Dixon",
+    "offset": 239050568,
+    "length": 11
+  },
+  {
+    "text": "Jessica Margala",
+    "offset": 239050589,
+    "length": 15
+  },
+  {
+    "text": "Andy Adams-Moran",
+    "offset": 239050614,
+    "length": 16
+  },
+  {
+    "text": "Matthew Rayermann",
+    "offset": 239050630,
+    "length": 17
+  },
+  {
+    "text": "Andy Salerno",
+    "offset": 239050657,
+    "length": 12
+  },
+  {
+    "text": "Ramsés Cabello",
+    "offset": 239050679,
+    "length": 15
+  },
+  {
+    "text": "Dmytro Struk",
+    "offset": 239050714,
+    "length": 12
+  },
+  {
+    "text": "Timothy Clem",
+    "offset": 239050736,
+    "length": 12
+  },
+  {
+    "text": "David Fowler",
+    "offset": 239050758,
+    "length": 12
+  },
+  {
+    "text": "Lutz Roeder",
+    "offset": 239050830,
+    "length": 11
+  },
+  {
+    "text": "Gökhan Arkan",
+    "offset": 239050851,
+    "length": 13
+  },
+  {
+    "text": "Carlo Rivera",
+    "offset": 239050874,
+    "length": 12
+  },
+  {
+    "text": "Issue Artifacts",
+    "offset": 239050901,
+    "length": 15
+  },
+  {
+    "text": "Copilot Connectors",
+    "offset": 239050957,
+    "length": 18
+  },
+  {
+    "text": "SSH remote hosts",
+    "offset": 239051019,
+    "length": 16
+  },
+  {
+    "text": "Vec is sized conservatively",
+    "offset": 239079421,
+    "length": 27
+  },
+  {
+    "text": "Arc counter overflow",
+    "offset": 239080201,
+    "length": 20
+  }
+]

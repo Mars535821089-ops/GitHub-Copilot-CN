@@ -1,0 +1,56 @@
+{
+  "Remove ${0} from ${1}": {
+    "to": "从${1}中移除${0}",
+    "bundles": [
+      "EnvironmentsSettingsView-DOf9EFQZ.js"
+    ]
+  },
+  "${0} is no longer selected on ${1}.": {
+    "to": "在${1}上不再选择${0}。",
+    "bundles": [
+      "EnvironmentsSettingsView-DOf9EFQZ.js"
+    ]
+  },
+  "Checks running, ${0} of ${1} complete": {
+    "to": "检查${1}的运行、${0}完成",
+    "bundles": [
+      "PullRequestDetailView-Cjlcqz3u.js"
+    ]
+  },
+  "Image ${0} of ${1}": {
+    "to": "${1}的图像${0}",
+    "bundles": [
+      "UniverWorkbookCanvas-BWmn1Vg9.js"
+    ]
+  },
+  "Added ${0} items when expected ${1}.": {
+    "to": "当预期为 ${1} 时添加了 ${0} 项。",
+    "bundles": [
+      "UniverWorkbookCanvas-BWmn1Vg9.js"
+    ]
+  },
+  "Got v${0} data when expected v${1}.": {
+    "to": "当预期v${1}时得到v${0}数据。",
+    "bundles": [
+      "UniverWorkbookCanvas-BWmn1Vg9.js"
+    ]
+  },
+  "Explain improvement ${0} for ${1} without applying it.": {
+    "to": "解释针对${1}的改进${0}而不应用它。",
+    "bundles": [
+      "WorkflowGalleryRoute-DRIJoOgH.js"
+    ]
+  },
+  "HTTP ${0} while loading ${1}": {
+    "to": "加载${1}时的HTTP ${0}",
+    "bundles": [
+      "sceneSetup-DiVsaSfo.js"
+    ]
+  },
+  "Couldn’t show ${0} in ${1}": {
+    "to": "${1}中无法显示${0}",
+    "bundles": [
+      "useStandalonePanelAddActions-CE4cFNl-.js"
+    ]
+  }
+}

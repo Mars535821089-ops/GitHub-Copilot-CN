@@ -1,0 +1,8 @@
+{
+  "observedAppLogFile": "github-app.82285.log",
+  "observedRootCause": "Foundry Local initialization dlopen rejected: mapping process and mapped file have different Team IDs",
+  "originalPatchCause": "App main executable was ad-hoc signed; model dylibs retained vendor Team ID",
+  "isolatedPublicCatalogAccessible": true,
+  "repair": "Use one existing legitimate local code-signing identity for app and in-process libraries; preserve hardened runtime and library validation",
+  "originalAuthAndModelSelectionChanged": false
+}
