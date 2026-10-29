@@ -4,6 +4,7 @@ const DISPLAY=new Set(['children','label','title','description','placeholder','a
 const NO=new Set(['prompt','systemPrompt','instructions','content','value','id','path','type','name','key','command','role','category','searchTerms','action','href','url','className','style']);
 function propName(n){return n?.key?.name??n?.key?.value??''}
 function displayContext(node,ancestors){
+  if(modeDisplayValue(node,ancestors)||assistedBadgeValue(node,ancestors))return true;
   const raw=node.type==='Literal'?node.value:node.type==='TemplateLiteral'?node.quasis.map(q=>q.value.cooked).join(''):'';
   const safeUi=['Skill','Plugin','Canvas','MCP server','MCP servers','menu bar','system tray'];
   let returned=false;
@@ -27,6 +28,21 @@ function displayContext(node,ancestors){
 }
 function encode(s){return JSON.stringify(s)}
 function literalText(n){return n?.type==='Literal'&&typeof n.value==='string'?n.value:n?.type==='TemplateLiteral'&&!n.expressions.length?n.quasis[0].value.cooked:null}
+function modeDisplayValue(node,ancestors){
+  const property=ancestors.at(-2),owner=ancestors.at(-3);
+  if(property?.type!=='Property'||property.value!==node||owner?.type!=='ObjectExpression'||owner.properties.length!==3)return false;
+  const maps=[
+    {interactive:'Interactive',plan:'Plan',autopilot:'Autopilot'},
+    {interactive:'Step-by-step collaboration',plan:'Plan first, execute when ready',autopilot:'End-to-end execution without interruption'},
+  ];
+  return maps.some(map=>owner.properties.every(p=>p.type==='Property'&&!p.computed&&!p.method&&Object.hasOwn(map,propName(p))&&literalText(p.value)===map[propName(p)])&&new Set(owner.properties.map(propName)).size===3);
+}
+function assistedBadgeValue(node,ancestors){
+  const property=ancestors.at(-2),owner=ancestors.at(-3);
+  if(property?.type!=='Property'||propName(property)!=='badge'||property.value!==node||literalText(node)!=='Experimental'||owner?.type!=='ObjectExpression')return false;
+  const props=new Map(owner.properties.filter(p=>p.type==='Property'&&!p.computed).map(p=>[propName(p),literalText(p.value)]));
+  return props.get('label')==='Assisted'&&props.get('description')==='Uses AI to reduce approval prompts.';
+}
 function emojiDescription(node,ancestors){
   const property=ancestors.at(-2),owner=ancestors.at(-3);
   if(property?.type!=='Property'||propName(property)!=='description'||property.value!==node||owner?.type!=='ObjectExpression')return false;
@@ -45,7 +61,7 @@ function localize(source,dict,options={}){
     if(n.type==='Literal'){if(typeof n.value!=='string')return;text=n.value;render=v=>encode(v)}
     else {text=n.quasis.map((q,i)=>q.value.cooked+(i<n.expressions.length?'${'+i+'}':'')).join('');
       render=v=>'`'+v.replace(/\\/g,'\\\\').replace(/`/g,'\\`').replace(/\$\{(\d+)\}/g,(_,i)=>'${'+source.slice(n.expressions[+i].start,n.expressions[+i].end)+'}')+'`';}
-    const tr=protectedStrings.has(text)&&!emojiDescription(n,anc)?undefined:dict[text];
+    const tr=protectedStrings.has(text)&&!emojiDescription(n,anc)&&!modeDisplayValue(n,anc)&&!assistedBadgeValue(n,anc)?undefined:dict[text];
     if(tr!==undefined&&n.type==='TemplateLiteral'){const expected=n.expressions.map((_,i)=>String(i));const actual=[...tr.matchAll(/\$\{(\d+)\}/g)].map(m=>m[1]);if(expected.join(',')!==actual.join(','))throw Error('translation changed template expression order: '+text);}
     if(tr!==undefined&&tr!==text){edits.push({start:n.start,end:n.end,text:render(tr),from:text,to:tr})}
     else if(/[A-Za-z]{2}/.test(text)&&text.length<1500)missing.push({text,start:n.start,end:n.end,context:source.slice(Math.max(0,n.start-70),Math.min(source.length,n.end+50))});

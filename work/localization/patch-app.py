@@ -11,7 +11,14 @@ buf=ORIGINAL.read_bytes();assert hashlib.sha256(buf).hexdigest()==json.load(open
 assert TARGET.resolve()!=ORIGINAL.resolve()
 # Reuse tested read-only geometry without its extraction side effects.
 inspection=pathlib.Path('work/research/inspect_embedded_ui.py').read_text().split('rows=[]; errors=[]')[0]
-ns={};exec(inspection,ns)
+ns={}
+# The read-only inspector has its own CLI; do not pass it the patch target argument.
+patch_arguments=sys.argv
+try:
+ sys.argv=['work/research/inspect_embedded_ui.py']
+ exec(inspection,ns)
+finally:
+ sys.argv=patch_arguments
 assert ns['APP'].resolve()==ORIGINAL.resolve(),'Resource geometry must use the original app'
 start,end,entry,off,va=ns['start'],ns['end'],ns['entry'],ns['off_for_va'],ns['va_for_off']
 entries=[];groups={};name_ranges=[]

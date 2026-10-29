@@ -11,6 +11,27 @@ const reviewed = require('./reviewed-dictionary.json');
 const dictionary = loadDictionary();
 const placeholders = text => [...text.matchAll(/\$\{(\d+)\}/g)].map(match => match[1]);
 
+test('mode menu translates exact bundled label maps without changing mode keys or protocol values', () => {
+  const source = 'const labels={interactive:`Interactive`,plan:`Plan`,autopilot:`Autopilot`};const descriptions={interactive:`Step-by-step collaboration`,plan:`Plan first, execute when ready`,autopilot:`End-to-end execution without interruption`};const modes=[`interactive`,`plan`,`autopilot`];';
+  const result = localize(source, dictionary, {protectedStrings: ['Interactive','Plan','Autopilot']});
+  const output = vm.runInNewContext(result.code + ';({labels,descriptions,modes})');
+  assert.deepEqual(Object.keys(output.labels), ['interactive','plan','autopilot']);
+  assert.deepEqual(Array.from(output.modes), ['interactive','plan','autopilot']);
+  for (const map of [output.labels,output.descriptions]) {
+    for (const value of Object.values(map)) assert.match(value, /[\u3400-\u9fff]/);
+  }
+  const arbitrary = 'const user={interactive:`Interactive`,plan:`my plan`,autopilot:`Autopilot`};';
+  assert.equal(localize(arbitrary, dictionary).code, arbitrary);
+});
+
+test('assisted approval badge translates without changing Experimental model vendor sentinels', () => {
+  const source='const ui={label:`Assisted`,badge:`Experimental`,description:`Uses AI to reduce approval prompts.`};const model={vendor:`Experimental`};const check=model.vendor===`Experimental`;';
+  const output=vm.runInNewContext(localize(source,dictionary).code+';({ui,model,check})');
+  assert.equal(output.ui.badge,'实验性');
+  assert.equal(output.model.vendor,'Experimental');
+  assert.equal(output.check,true);
+});
+
 test('reviewed translations preserve interpolation slots and contain Chinese', () => {
   for (const [source, target] of Object.entries(reviewed)) {
     assert.match(target, /[\u3400-\u9fff]/, source);
