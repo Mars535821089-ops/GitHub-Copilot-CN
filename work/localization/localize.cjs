@@ -27,6 +27,12 @@ function displayContext(node,ancestors){
 }
 function encode(s){return JSON.stringify(s)}
 function literalText(n){return n?.type==='Literal'&&typeof n.value==='string'?n.value:n?.type==='TemplateLiteral'&&!n.expressions.length?n.quasis[0].value.cooked:null}
+function emojiDescription(node,ancestors){
+  const property=ancestors.at(-2),owner=ancestors.at(-3);
+  if(property?.type!=='Property'||propName(property)!=='description'||property.value!==node||owner?.type!=='ObjectExpression')return false;
+  const properties=new Map(owner.properties.filter(p=>p.type==='Property'&&!p.computed).map(p=>[propName(p),p.value]));
+  return literalText(properties.get('emoji'))!==null&&properties.get('names')?.type==='ArrayExpression'&&properties.get('tags')?.type==='ArrayExpression'&&literalText(properties.get('category'))!==null;
+}
 function collectSentinels(ast){const set=new Set();walk.fullAncestor(ast,(n,_s,anc)=>{const text=literalText(n);if(text===null)return;const p=anc[anc.length-2];if(p?.type==='BinaryExpression'||p?.type==='SwitchCase'||p?.type==='CallExpression'&&p.callee?.type==='MemberExpression'&&['includes','startsWith','endsWith','indexOf','lastIndexOf','has'].includes(p.callee.property?.name))set.add(text)});return set;}
 function localize(source,dict,options={}){
   const ast=acorn.parse(source,{ecmaVersion:'latest',sourceType:'module',allowHashBang:true});
@@ -39,7 +45,7 @@ function localize(source,dict,options={}){
     if(n.type==='Literal'){if(typeof n.value!=='string')return;text=n.value;render=v=>encode(v)}
     else {text=n.quasis.map((q,i)=>q.value.cooked+(i<n.expressions.length?'${'+i+'}':'')).join('');
       render=v=>'`'+v.replace(/\\/g,'\\\\').replace(/`/g,'\\`').replace(/\$\{(\d+)\}/g,(_,i)=>'${'+source.slice(n.expressions[+i].start,n.expressions[+i].end)+'}')+'`';}
-    const tr=protectedStrings.has(text)?undefined:dict[text];
+    const tr=protectedStrings.has(text)&&!emojiDescription(n,anc)?undefined:dict[text];
     if(tr!==undefined&&n.type==='TemplateLiteral'){const expected=n.expressions.map((_,i)=>String(i));const actual=[...tr.matchAll(/\$\{(\d+)\}/g)].map(m=>m[1]);if(expected.join(',')!==actual.join(','))throw Error('translation changed template expression order: '+text);}
     if(tr!==undefined&&tr!==text){edits.push({start:n.start,end:n.end,text:render(tr),from:text,to:tr})}
     else if(/[A-Za-z]{2}/.test(text)&&text.length<1500)missing.push({text,start:n.start,end:n.end,context:source.slice(Math.max(0,n.start-70),Math.min(source.length,n.end+50))});

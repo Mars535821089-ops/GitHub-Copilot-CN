@@ -17,6 +17,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: npm ci --prefix work/runtime
-      - run: node --test work/localization/test-localize.cjs work/localization/test-runtime.cjs work/localization/test-native-menu.cjs work/localization/test-ui-surfaces.cjs
+      - run: node --test work/localization/test-localize.cjs work/localization/test-runtime.cjs work/localization/test-native-menu.cjs work/localization/test-ui-surfaces.cjs work/localization/test-dictionary.cjs
       - run: python work/localization/test-resource-pool.py
       - run: python work/localization/test-upstream-check.py
+      - run: python work/localization/test-build-ui.py

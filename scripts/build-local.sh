@@ -20,7 +20,7 @@ if [ -e "$out" ]; then
   exit 2
 fi
 "$py" -m venv --system-site-packages .venv
-if ! .venv/bin/python -c "import brotli; assert tuple(map(int, brotli.__version__.split(".")[:2])) >= (1, 1)" 2>/dev/null; then
+if ! .venv/bin/python -c 'import brotli; assert tuple(map(int, brotli.__version__.split(".")[:2])) >= (1, 1)' 2>/dev/null; then
   .venv/bin/python -m pip install -r requirements.txt
 fi
 if [ ! -d work/runtime/node_modules/acorn ]; then
@@ -40,8 +40,10 @@ PY
 .venv/bin/python work/research/inspect_embedded_ui.py
 .venv/bin/python work/localization/build-ui.py
 node work/localization/verify-ui-structure.cjs
-node --test work/localization/test-localize.cjs work/localization/test-runtime.cjs work/localization/test-native-menu.cjs work/localization/test-real-settings.cjs work/localization/test-ui-surfaces.cjs work/localization/test-real-source-surfaces.cjs
+node --test work/localization/test-localize.cjs work/localization/test-runtime.cjs work/localization/test-native-menu.cjs work/localization/test-real-settings.cjs work/localization/test-ui-surfaces.cjs work/localization/test-real-source-surfaces.cjs work/localization/test-dictionary.cjs
 .venv/bin/python work/localization/test-resource-pool.py
+.venv/bin/python work/localization/test-upstream-check.py
+.venv/bin/python work/localization/test-build-ui.py
 ditto "$backup" "$out"
 .venv/bin/python work/localization/patch-app.py "$out/Contents/MacOS/github"
 for name in Microsoft.AI.Foundry.Local.Core.dylib libonnxruntime.dylib libonnxruntime-genai.dylib CopilotMediaRemoteAdapter.dylib; do

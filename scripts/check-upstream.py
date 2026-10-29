@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BASELINE = ROOT / 'work/research/local-ui-manifest.json'
 INSPECTOR = ROOT / 'work/research/inspect_embedded_ui.py'
 LOCALIZER = ROOT / 'work/localization/localize.cjs'
-DICTIONARY = ROOT / 'work/localization/dictionary.json'
+DICTIONARY_LOADER = ROOT / 'work/localization/dictionary.cjs'
 DEFAULT_APP = Path('/Applications/GitHub Copilot.app')
 
 
@@ -95,8 +95,12 @@ def preview(app, output_dir):
 
         output_dir.mkdir(parents=True)
         localized = output_dir / 'translated-assets'
+        effective = temporary / 'effective-dictionary.json'
+        effective.write_text(subprocess.check_output(
+            ['node', str(DICTIONARY_LOADER)], cwd=ROOT, text=True
+        ))
         run = subprocess.run([
-            'node', str(LOCALIZER), str(extracted / 'assets'), str(localized), str(DICTIONARY)
+            'node', str(LOCALIZER), str(extracted / 'assets'), str(localized), str(effective)
         ], cwd=ROOT, text=True, capture_output=True)
         if run.returncode:
             raise ValueError(f'候选译文生成失败：{run.stderr or run.stdout}')
