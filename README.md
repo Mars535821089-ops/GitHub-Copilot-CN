@@ -2,6 +2,8 @@
 
 适用于 GitHub Copilot 独立 macOS 应用 1.1.33（arm64）的非官方简体中文界面补丁源码。本仓库提供 UI 文本审查、翻译、资源重建、结构验证和本地模型库签名修复工具。它不包含 GitHub 官方应用、可执行文件、模型权重、账户数据或签名证书。
 
+**维护状态：**截至 2026-10-29，GitHub Copilot 桌面应用没有文档化的 UI 语言包或本地化扩展接口，不能像 VS Code 一样通过受支持的语言包跟随产品更新。当前构建仍绑定到 1.1.33 的原版主程序 SHA-256；遇到其他版本会停止。更新后可运行 `python3 scripts/check-upstream.py '/Applications/GitHub Copilot.app'`，只读检查版本和资源指纹，并在 `outputs/upstream-review-*` 生成精确词典候选差异供审查；它不会把候选译文应用到应用包。详情、限制和更新流程见 [低维护本地化维护方式](docs/低维护本地化维护方式.md)。
+
 ## 已完成范围
 
 - 对 1,065 个打包 JavaScript 模块审查固定界面文本；覆盖 16,859 处静态显示文字与 7,472 个 UI 渲染位置。
@@ -28,5 +30,6 @@
 - work/model-diagnosis：模型库加载与目录测试的原生源码及脱敏验收摘要。
 - work/runtime：Node 依赖清单与锁文件。
 - docs：本机原构建的审查与验收记录，含已知未验收项。
+- scripts/check-upstream.py：更新后的本机版本/资源指纹检查与候选译文差异预览；只读应用包。
 
 译文参考了 zhao818/copilot-desktop-zh 和 Moyxi/copilot-desktop-zh-ai 的公开 MIT 词典；署名和许可文本见 THIRD_PARTY_NOTICES.md。GitHub、GitHub Copilot、Microsoft Foundry Local 及相关标识属于各自权利人。本仓库与官方项目无关联。

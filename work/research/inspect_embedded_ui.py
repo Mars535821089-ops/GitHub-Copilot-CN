@@ -1,11 +1,22 @@
 """Read-only inventory/extraction of local Tauri frontend resources for localization review.
 Never modifies or executes the app or extracted JavaScript.
 """
-import hashlib,json,os,pathlib,struct
+import argparse,hashlib,json,os,pathlib,plistlib,struct
 import brotli
-APP=pathlib.Path(os.environ.get('COPILOT_ORIGINAL_EXECUTABLE','outputs/恢复原版/GitHub Copilot.app/Contents/MacOS/github'))
-OUT=pathlib.Path('work/research/local-ui-assets'); OUT.mkdir(parents=True,exist_ok=True)
+parser=argparse.ArgumentParser(description='Extract read-only text assets from a local Copilot app executable.')
+parser.add_argument('--app-executable',default=os.environ.get('COPILOT_ORIGINAL_EXECUTABLE','outputs/恢复原版/GitHub Copilot.app/Contents/MacOS/github'))
+parser.add_argument('--output-dir',default='work/research/local-ui-assets')
+parser.add_argument('--manifest',default='work/research/local-ui-manifest.json')
+args=parser.parse_args()
+APP=pathlib.Path(args.app_executable)
+OUT=pathlib.Path(args.output_dir); OUT.mkdir(parents=True,exist_ok=True)
+MANIFEST=pathlib.Path(args.manifest)
 buf=APP.read_bytes()
+info_plist=APP.parent.parent/'Info.plist'
+with info_plist.open('rb') as stream:
+    app_version=plistlib.load(stream).get('CFBundleShortVersionString')
+if not isinstance(app_version,str) or not app_version:
+    raise ValueError(f'Application version missing from {info_plist}')
 assert struct.unpack_from('<I',buf)[0]==0xfeedfacf
 ncmd=struct.unpack_from('<I',buf,16)[0]; pos=32; segments=[]
 for _ in range(ncmd):
@@ -56,6 +67,7 @@ for at in range(start,end+1,32):
             row.update(decoded_bytes=len(decoded),sha256=hashlib.sha256(decoded).hexdigest())
         except Exception as e: errors.append({'name':name,'error':str(e)})
     rows.append(row)
-manifest={'app_version':'1.1.33','app_sha256':hashlib.sha256(buf).hexdigest(),'resource_count':len(rows),'decoded_count':sum('decoded_bytes' in r for r in rows),'errors':errors,'resources':rows}
-pathlib.Path('work/research/local-ui-manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2))
+manifest={'app_version':app_version,'app_sha256':hashlib.sha256(buf).hexdigest(),'resource_count':len(rows),'decoded_count':sum('decoded_bytes' in r for r in rows),'errors':errors,'resources':rows}
+MANIFEST.parent.mkdir(parents=True,exist_ok=True)
+MANIFEST.write_text(json.dumps(manifest,ensure_ascii=False,indent=2))
 print(json.dumps({k:v for k,v in manifest.items() if k!='resources'},ensure_ascii=False,indent=2))

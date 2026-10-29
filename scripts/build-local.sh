@@ -15,18 +15,19 @@ if [ ! -f "$source_app/Contents/MacOS/github" ]; then
   echo '输入必须是完整的官方原版 .app' >&2
   exit 2
 fi
-"$py" - "$source_app/Contents/MacOS/github" <<'PY'
-import hashlib,json,pathlib,sys
-expected=json.loads(pathlib.Path('work/research/local-ui-manifest.json').read_text())['app_sha256']
-actual=hashlib.sha256(pathlib.Path(sys.argv[1]).read_bytes()).hexdigest()
-if actual!=expected: raise SystemExit('原版程序哈希不符；此补丁只支持绑定的 1.1.33 原版')
-print('原版 SHA-256 已核对')
-PY
-mkdir -p 'outputs/恢复原版' dist
 if [ -e "$out" ]; then
   echo 'dist 中已有构建产物；请先自行处理，脚本不会覆盖' >&2
   exit 2
 fi
+"$py" -m venv --system-site-packages .venv
+if ! .venv/bin/python -c "import brotli; assert tuple(map(int, brotli.__version__.split(".")[:2])) >= (1, 1)" 2>/dev/null; then
+  .venv/bin/python -m pip install -r requirements.txt
+fi
+if [ ! -d work/runtime/node_modules/acorn ]; then
+  npm ci --prefix work/runtime
+fi
+.venv/bin/python scripts/check-upstream.py "$source_app"
+mkdir -p 'outputs/恢复原版' dist
 if [ ! -e "$backup" ]; then
   ditto "$source_app" "$backup"
 fi
@@ -36,13 +37,6 @@ expected=json.loads(pathlib.Path('work/research/local-ui-manifest.json').read_te
 actual=hashlib.sha256(pathlib.Path(sys.argv[1]).read_bytes()).hexdigest()
 if actual!=expected: raise SystemExit('本地原版副本与版本约束不一致；未覆盖已有副本')
 PY
-"$py" -m venv --system-site-packages .venv
-if ! .venv/bin/python -c "import brotli; assert tuple(map(int, brotli.__version__.split(".")[:2])) >= (1, 1)" 2>/dev/null; then
-  .venv/bin/python -m pip install -r requirements.txt
-fi
-if [ ! -d work/runtime/node_modules/acorn ]; then
-  npm ci --prefix work/runtime
-fi
 .venv/bin/python work/research/inspect_embedded_ui.py
 .venv/bin/python work/localization/build-ui.py
 node work/localization/verify-ui-structure.cjs
