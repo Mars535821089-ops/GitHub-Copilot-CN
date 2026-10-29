@@ -19,6 +19,8 @@ function tr(s){
  if(typeof s!=='string')return s;
  if(Object.hasOwn(D,s))return D[s];const t=s.trim();if(Object.hasOwn(D,t))return s.replace(t,()=>D[t]);
  let m;if(m=/^(?:PR|拉取请求) #(\d+) · (open|closed|merged|draft)$/.exec(t))return '拉取请求 #'+m[1]+' · '+({open:'开放',closed:'已关闭',merged:'已合并',draft:'草稿'}[m[2]]);
+ if(m=/^(\d+) messages?$/.exec(t))return m[1]+' 条消息';
+ if(m=/^([\s\S]*) \((\d+) sub-agents?, (\d+) calls, (\d+) hidden\)$/.exec(t))return m[1]+'（'+m[2]+' 个子智能体，'+m[3]+' 次调用，'+m[4]+' 项已隐藏）';
  if(m=/^Search (\d+) skills?(…|\.\.\.)?$/.exec(t))return '搜索 '+m[1]+' 个技能'+(m[2]?'…':'');for(const p of __zhPatterns){if(p.prefix&&!t.startsWith(p.prefix))continue;const found=p.re.exec(t);if(found){const groups={};p.ids.forEach((id,i)=>{groups[id]=found[i+1]});return p.target.replace(/\$\{(\d+)\}/g,(_,id)=>groups[id]??'');}}
  if(m=/^(\d{1,2}):(\d{2}) (AM|PM)$/.exec(t))return String((Number(m[1])%12)+(m[3]==='PM'?12:0)).padStart(2,'0')+':'+m[2];
  if(m=/^Up to date\. Last checked on (.+)$/.exec(t)){const date=new Date(m[1].replace(', at ',' '));return '已是最新版本。上次检查：'+(isNaN(date)?m[1]:new Intl.DateTimeFormat('zh-CN',{dateStyle:'long',timeStyle:'short'}).format(date));}

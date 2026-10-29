@@ -21,10 +21,11 @@ function loadDictionary() {
     }
   }
   const dictionary = {...base, ...emoji, ...native, ...reviewed};
+  const reviewedTargets = new Set(Object.values(reviewed));
   // Repair older localized display strings without rewriting user content.
   for (const [source, target] of Object.entries(reviewed)) {
     const previous = base[source];
-    if (previous && previous !== target && !Object.hasOwn(dictionary, previous)) {
+    if (previous && previous !== target && !reviewedTargets.has(previous) && !Object.hasOwn(dictionary, previous)) {
       dictionary[previous] = target;
     }
   }

@@ -1,6 +1,8 @@
 const acorn=require('../runtime/node_modules/acorn'),walk=require('../runtime/node_modules/acorn-walk');
+const {displayProperty}=require('./display-metadata.cjs');
+const {localizeUniver}=require('./univer-ui.cjs');
 const UI_PROPS=new Set(['placeholder','data-placeholder','aria-label','aria-description','title','tooltip','label','description','alt']);
-const isUiProp=k=>UI_PROPS.has(k)||/^[A-Za-z]*(?:Label|Title|Description|Placeholder|Tooltip|Caption|Hint|Text)$/.test(k)&&!/(?:source|code|diff|input|output|message|original|user|repo|modelName)/i.test(k);
+const isUiProp=k=>UI_PROPS.has(k)||displayProperty(k);
 const SCOPE=new Set(['Program','BlockStatement','FunctionDeclaration','FunctionExpression','ArrowFunctionExpression','CatchClause']);
 const calleeOf=n=>n?.type==='SequenceExpression'?n.expressions.at(-1):n;
 const name=p=>p?.key?.name??p?.key?.value;const fixed=n=>n?.type==='Literal'&&typeof n.value==='string'?n.value:n?.type==='TemplateLiteral'?n.quasis.map((q,i)=>q.value.cooked+(i<n.expressions.length?'${'+i+'}':'')).join(''):null;
@@ -55,7 +57,8 @@ function transform(source,dictionary={},options={}){
   edits.push({start:value.start,end:value.end,text:'((globalThis.'+method+'??(v=>v))(('+raw+')))',kind:'render'});audit.renderBindings++;if(sources.some(s=>s.tupleDerived))audit.labelTupleBindings++;
  });
  edits.sort((a,b)=>b.start-a.start);let code=source,last=source.length;const used=[];for(const edit of edits){if(edit.end>last)continue;code=code.slice(0,edit.start)+edit.text+code.slice(edit.end);last=edit.start;used.push(edit)}
- acorn.parse(code,{ecmaVersion:'latest',sourceType:'module',allowHashBang:true});audit.applied=used.length;return{code,audit};
+ if(options.fileName?.startsWith('UniverWorkbookCanvas-')){code=localizeUniver(code);audit.univerLocale=1;}
+ acorn.parse(code,{ecmaVersion:'latest',sourceType:'module',allowHashBang:true});audit.applied=used.length+(audit.univerLocale??0);return{code,audit};
 }
 module.exports={transform};
 if(require.main===module){const fs=require('fs'),path=require('path');const [input,output,dictFile]=process.argv.slice(2);const dictionary=JSON.parse(fs.readFileSync(dictFile));const functionIndex=require('./fixed-render-functions.cjs').buildIndex(input);fs.writeFileSync(path.join(output,'fixed-render-functions.json'),JSON.stringify(functionIndex));const reports=[];for(const file of fs.readdirSync(input)){if(!file.endsWith('.js'))continue;const dest=path.join(output,file);const source=fs.existsSync(dest)?fs.readFileSync(dest,'utf8'):fs.readFileSync(path.join(input,file),'utf8');try{const r=transform(source,dictionary,{fileName:file,fixedFunctions:functionIndex[file]});if(r.audit.applied)fs.writeFileSync(dest,r.code);reports.push({file,...r.audit})}catch(e){reports.push({file,error:e.message})}}fs.writeFileSync(path.join(output,'surface-audit.json'),JSON.stringify(reports,null,2));console.log(JSON.stringify({scanned:reports.length,changed:reports.filter(r=>r.applied).length,renderBindings:reports.reduce((a,r)=>a+(r.renderBindings||0),0),templateSeeds:reports.reduce((a,r)=>a+(r.builtinTemplateSeeds||0),0),errors:reports.filter(r=>r.error)},null,2));if(reports.some(r=>r.error))process.exit(1)}

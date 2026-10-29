@@ -40,7 +40,8 @@ PY
 .venv/bin/python work/research/inspect_embedded_ui.py
 .venv/bin/python work/localization/build-ui.py
 node work/localization/verify-ui-structure.cjs
-node --test work/localization/test-localize.cjs work/localization/test-runtime.cjs work/localization/test-native-menu.cjs work/localization/test-real-settings.cjs work/localization/test-ui-surfaces.cjs work/localization/test-real-source-surfaces.cjs work/localization/test-dictionary.cjs
+node work/localization/audit-ui.cjs work/research/local-ui-assets/assets work/localization/translated-assets work/localization/translated-assets/full-ui-audit.json
+node --test work/localization/test-localize.cjs work/localization/test-runtime.cjs work/localization/test-native-menu.cjs work/localization/test-real-settings.cjs work/localization/test-ui-surfaces.cjs work/localization/test-real-source-surfaces.cjs work/localization/test-dictionary.cjs work/localization/test-audit-ui.cjs work/localization/test-univer-locale.cjs
 .venv/bin/python work/localization/test-resource-pool.py
 .venv/bin/python work/localization/test-upstream-check.py
 .venv/bin/python work/localization/test-build-ui.py

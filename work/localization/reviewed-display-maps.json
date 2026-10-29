@@ -1,0 +1,160 @@
+{
+  "App-": [
+    {"topLeft":"Top left","topCenter":"Top center","topRight":"Top right","bottomLeft":"Bottom left","bottomCenter":"Bottom center","bottomRight":"Bottom right"},
+    {"general":"General","notifications":"Notifications","sessions":"Sessions","computer-use":"Computer Use","themes":"Themes","accessibility":"Accessibility","mcp":"MCP servers","plugins":"Plugins","skills":"Skills","extensions":"Customize","account":"Accounts","experimental":"Experimental","agency":"Agency","voice":"Voice dictation","model-providers":"Model providers","developers":"Debug tools","environments":"Environments"},
+    {"general":"General","appearance":"Appearance","themes":"Themes","chat":"Chat","accessibility":"Accessibility","mcp":"MCP servers","account":"Accounts","experimental":"Experimental","developers":"Debug tools"},
+    {"prs":"Pull requests","branches":"Branches","issues":"Issues"},
+    {"answer-required":"Automation needs your input","interrupted":"Automation was interrupted","working":"Automation is running"},
+    {"grouped":"Repository","state":"Status","flat":"Last updated","environment":"Environment"},
+    {"activity":"Updated","creation":"Created","status":"Status","alphabetically-asc":"Name (A-Z)","alphabetically-desc":"Name (Z-A)"}
+  ],
+  "AutomationListRow-": [
+    {"starting":"Starting…","running":"Running…","idle":"Idle"}
+  ],
+  "Conversation-": [
+    {"connecting":"Connecting…","awaiting_consent":"Finish connecting in your browser","disconnecting":"Disconnecting…"},
+    {"one":"File","many":"Files"},
+    {"accept":"Answered","decline":"Skipped","cancel":"Cancelled"}
+  ],
+  "ChatPanel-": [
+    {"resize":"Resize session panel","tabs":"Session panel tabs","heading":"Session"}
+  ],
+  "DevelopersSettingsView-": [
+    {"upgrade":"Yes","managed":"No","budget":"—"},
+    {"upgrade":"No","managed":"No","budget":"Off"},
+    {"upgrade":"No","managed":"No","budget":"On"},
+    {"upgrade":"Yes","managed":"No","budget":"Off"},
+    {"upgrade":"Yes","managed":"No","budget":"On"},
+    {"upgrade":"No","managed":"Yes","budget":"Off"},
+    {"upgrade":"No","managed":"No","budget":"Spent"}
+  ],
+  "ConnectorAuthorizationBanner-": [
+    {"connecting":"Connecting…","awaiting_consent":"Finish connecting in your browser","disconnecting":"Disconnecting…"}
+  ],
+  "ExtensionsView-": [
+    {"connecting":"Connecting…","awaiting_consent":"Waiting for you to finish in your browser…","disconnecting":"Disconnecting…"},
+    {"discover":"Browse","installed":"Installed","organization":"From your organization"}
+  ],
+  "FactoryProposalPanelProvider-": [
+    {"prompt":"Instructions","model":"Model","reasoning_effort":"Reasoning effort","tools":"Tools","triggers":"Triggers and schedule"}
+  ],
+  "ExperimentalSettingsView-": [
+    {"response":"ExP assignment","environment":"Local ExP override","unresolved_safety":"ExP fallback","expired_safety":"ExP fallback"},
+    {"canvas":"Canvas","inbox":"Inbox","sessions":"Sessions","remote":"Environments","models":"Models","agents":"Orchestration","diffs":"Diffs","system":"System","issues":"Issues and pull requests","other":"Other"},
+    {"all_users":"Public","staff":"Staff + dev","github_staff":"GitHub staff + dev","microsoft_staff":"Microsoft staff + dev","dev":"Dev only"},
+    {"none":"No","all_users":"Public","staff":"Staff + dev","github_staff":"GitHub staff + dev","microsoft_staff":"Microsoft staff + dev","dev":"Dev only"},
+    {"current":"Current role","dev":"Dev","staff_gh":"Staff GH","staff_msft":"Staff MSFT","all_users":"Public"}
+  ],
+  "MyWorkInboxView-": [
+    {"active":"No active items","done":"No completed items"}
+  ],
+  "PullRequestDetailView-": [
+    {"approved":"Approved","changes_requested":"Changes requested","commented":"Commented","dismissed":"Dismissed","pending":"Pending review"},
+    {"brief":"Brief","standard":"Standard","detailed":"Detailed","technical":"Technical","balanced":"Balanced","plain":"Plain language"},
+    {"label":"labels","assignment":"assignee","milestone":"milestone","project":"project","duplicate":"duplicates","connection_added":"related issues","connection_removed":"related issues","cross_reference":"references","referenced":"commit references"}
+  ],
+  "RepoVisibilityField-": [
+    {"public":"Anyone can see this repository","private":"Only you can see this repository"}
+  ],
+  "SessionsSettingsView-": [
+    {"off":"Disabled","export":"View only","on":"Remote control"},
+    {"minimal":"Minimal","balanced":"Balanced","detailed":"Detailed"}
+  ],
+  "SpaceView-": [
+    {"search":"Search","sort":"Sort","period":"Time range"},
+    {"regular":"Regular","bold":"Bold","badge":"Badge"},
+    {"dependabot":"Dependabot","code-scanning":"Code scanning","secret-scanning":"Secret scanning"},
+    {"success":"Succeeded","failure":"Failed","cancelled":"Cancelled","skipped":"Skipped","timed_out":"Timed out","action_required":"Action required","neutral":"Neutral","stale":"Stale","startup_failure":"Startup failure"},
+    {"queued":"Queued","in_progress":"In progress","waiting":"Waiting","requested":"Requested","pending":"Pending"},
+    {"merge-queue":"Merge queue","actions":"Actions","deployments":"Deployments","code-scanning":"Code scanning"},
+    {"automations":"Automations","merge-queue":"Merge queue","actions":"Actions","deployments":"Deployments","code-scanning":"Code scanning","trending-repositories":"Trending repositories","trending-developers":"Trending developers"}
+  ],
+  "StandaloneSessionPanel-": [
+    {"needs_attention":"Needs attention","in_progress":"In progress","waiting":"Waiting","done":"Done"}
+  ],
+  "VoiceInspectorPanel-": [
+    {"heard":"Heard","screen":"Screen","match":"Code match","model":"Model","rule":"Rule","result":"Result"},
+    {"pressed":"Pressed","ran":"Ran","confirming":"Asked for a yes","counting-down":"Counted down","offered":"Offered","choosing":"Opened its values","already":"Already set","refused":"Refused","declined":"Declined","cancelled":"Cancelled","kept":"Kept waiting","interrupted":"Interrupted"},
+    {"exact":"exact name","sound-alike":"sounds like","pointing":"a pointing word","offer-pick":"a pick from the offer","prompt-reply":"a yes or no to the prompt","prompt-pick":"a prompt option's letter or number","prompt-text":"words for the prompt's field"},
+    {"empty-transcript":"no words were heard","no-candidates":"there was nothing on screen or in the commands to match","no-name-match":"no name on screen and no command matched the words","ambiguous-spans":"two different names were said at the same length","name-in-passing":"a name was found, but the sentence was about something else","verb-required":"a listening session needs a verb in front of a name","sound-alike-inconclusive":"two sound-alikes were about as close","prompt-has-no-reply":"a yes or no, but no prompt in scope has an option for it","prompt-only-standing":"a yes, but the prompt's only allowing options grant more than this request","command-in-doubt":"a command's words matched, but the verb or the screen puts them in doubt"}
+  ],
+  "WorkspaceHoverPreviewCard-": [
+    {"satisfied":"Passed","pending":"Pending","failed":"Failed","unknown":"Unknown","notApplicable":"Not applicable"},
+    {"not_shared":"Not enabled","starting":"Setting up","published":"Available from other apps","unavailable":"Unavailable","unconfirmed":"Unconfirmed","stopping":"Stopping","stopped":"Stopped"},
+    {"ready":"Ready","indexing":"Indexing","partial":"Partial","not_indexed":"Not indexed","unavailable":"Unavailable"},
+    {"cloning_repo":"Cloning repository...","opening_repo":"Opening repository...","initializing":{"identifier":true},"syncing":"Fetching latest changes...","verifying":"Resolving base branch...","cleaning":"Cleaning previous repository...","creating_worktree":"Creating git worktree...","ready":"Session is ready"},
+    {"shell":"Shell","read":"Read","edit":"Edit","mcp":"MCP tool","agent":"Agent","hook":"Hook","compaction":"Compaction","thinking":"Thinking","other":"Other"}
+  ],
+  "WorkflowGalleryRoute-": [
+    {"added":"Added","updated":"Updated","deleted":"Removed","unknown":"Unknown change"}
+  ],
+  "WorkflowRunRoute-": [
+    {"manual":"Manual","schedule":"Scheduled","catch_up":"Catch-up"}
+  ],
+  "run-": [
+    {"checking":"Checking for updates","downloading":"Downloading update","installing":"Installing update"},
+    {"needs-input":"Needs input","working":"Working","done":"Done"},
+    {"needs-input":"Needs input","ready-to-merge":"Ready to merge","in-progress":"Working","open":"Open","idle":"Done"}
+  ],
+  "streamingMarkdownBlocks-": [
+    {"available":null,"host_reconnecting":"Unavailable — reconnecting","recovering_host":"Unavailable — recovering environment","reattaching":"Connecting","unknown":"Availability unknown","session_missing_on_host":"Unavailable — session not found on environment","environment_removed":"Unavailable — environment not found","environment_unsupported":"Unavailable — environment no longer supported","authentication_required":"Unavailable — sign in required","host_failed":"Unavailable — connection failed"}
+  ],
+  "switch-": [
+    {"manual":"Always ask","assisted":{"member":"label"},"allow-all":"Approve all"},
+    {"manual":"Ask before running tools.","assisted":{"member":"description"},"allow-all":"Run tools without asking."}
+  ],
+  "targetHighlight-": [
+    {"main":"Main","navigation":"Navigation","complementary":"Side panel","search":"Search","dialog":"Dialog","alertdialog":"Dialog","menu":"Menu"},
+    {"MAIN":"Main","NAV":"Navigation","ASIDE":"Side panel"}
+  ],
+  "use-project-source-root-uri-": [
+    {"worktree":"New worktree","local":"Current checkout","cloud":"New worktree"}
+  ],
+  "useGroupedInboxSection-": [
+    {"created":"Created","updated":"Updated","merged":"Merged"}
+  ],
+  "useIndexingRequestOutcome-": [
+    {"ready":"Ready","indexing":"Indexing","not_indexed":"Not indexed"}
+  ],
+  "useMcpCatalogPolicy-": [
+    {"default":"Default results","expanded":"Expanded results only","hidden":"Hidden from normal results"},
+    {"mcp":"MCP Server","skill":"Skill","plugin":"Plugin","canvas":"Canvas","agent-extension":"Extension","catalogue":"Catalogue"}
+  ],
+  "useStandalonePanelAddActions-": [
+    {"date":"Date","session":"Session","kind":"Kind","source":"Source"},
+    {"one":"Folder","many":"Folders"},
+    {"posted":"Posted","added":"Added","cloud":"Cloud"},
+    {"add":"Added","attachment":"Attached in chat","create":"Created"}
+  ],
+  "useWebSocketTransport-": [
+    {"+1":"Thumbs up","-1":"Thumbs down","laugh":"Laugh","hooray":"Hooray","confused":"Confused","heart":"Heart","rocket":"Rocket","eyes":"Eyes"},
+    {"agents":"Overview","library":"Library"},
+    {"efficiency":"Standard","balance":"High","intelligence":"Max"},
+    {"efficiency":"Standard","balance":"Standard","intelligence":"High"},
+    {"quota_exceeded":"Monthly AI credits exhausted","session_quota_exceeded":"Session spending cap reached","billing_not_configured":"Billing setup required","additional_spend_limit_reached":"Additional usage limit reached"},
+    {"completions":"Code completions","chat":"Chat messages","premium_interactions":"Premium requests","weekly":"Weekly limits","session":"Session limits"},
+    {"wsl":"WSL","ssh":"SSH","codespace":"Codespace","sandbox":"Sandbox","other":"Other"},
+    {"assign":"Assigned","author":"Authored item","comment":"New comment","manual":"Subscribed","mention":"Mentioned","review_requested":"Review requested","state_change":"State changed","subscribed":"New activity","team_mention":"Team mentioned"},
+    {"personal":"Personal","project":"Repository","plugin":"Plugin","builtin":"Built-in","other":"Other"},
+    {"cloud":"Cloud","codespace":"Codespaces","wsl":"WSL","ssh":"SSH","remote":"Other remote","local":"Local"},
+    {"action_required":"Action required","failure":"Failing","pending":"In progress","success":"Successful","neutral":"Neutral","skipped":"Skipped"},
+    {"all":"All","comments":"Comments","reviews":"Reviews"},
+    {"activity-asc":"Oldest first","activity-desc":"Newest first"},
+    {"OUTDATED":"Outdated","RESOLVED":"Resolved","OFF_TOPIC":"Off-topic","SPAM":"Spam","ABUSE":"Abuse","DUPLICATE":"Duplicate","LOW_QUALITY":"Low quality"},
+    {"created-desc":"Newest first","created-asc":"Oldest first","updated-desc":"Recently updated","updated-asc":"Least recently updated"},
+    {"search":"Search","sort":"Sort","period":"Time range","choice":"","text":""},
+    {"title":"Title","identifier":"Identifier","subtitle":"Description","date":"Date","status":"Status"},
+    {"all":"All statuses","queued":"Queued","in_progress":"In progress","waiting":"Waiting","requested":"Requested","pending":"Pending","completed":"Completed","success":"Succeeded","failure":"Failed","cancelled":"Cancelled","skipped":"Skipped","timed_out":"Timed out","action_required":"Action required","neutral":"Neutral","stale":"Stale"},
+    {"allow-all":"Tool permissions: Approve all","assisted":"Tool permissions: ${0}","manual":"Tool permissions: Approve all off"},
+    {"allow-all":"Approve all","assisted":{"member":"label"},"manual":"Always ask"},
+    {"interactive":"Ask anything…","plan":"Plan a task…","autopilot":"Delegate a task…"},
+    {"interactive":"Ask anything or paste a URL. Use / for commands, & sessions, # issues…","plan":"Plan a task or paste a URL. Use / for commands, & sessions, # issues…","autopilot":"Delegate a task or paste a URL. Use / for commands, & sessions, # issues…"},
+    {"interactive":"Ask anything. Use / for commands or & for sessions…","plan":"Plan a task. Use / for commands or & for sessions…","autopilot":"Delegate a task. Use / for commands or & for sessions…"},
+    {"interactive":"Ask anything. Use / for commands, @ files, & sessions, # issues…","plan":"Plan a task. Use / for commands, @ files, & sessions, # issues…","autopilot":"Delegate a task. Use / for commands, @ files, & sessions, # issues…"},
+    {"interactive":"Ask anything. Use / for commands, & sessions, # issues…","plan":"Plan a task. Use / for commands, & sessions, # issues…","autopilot":"Delegate a cloud task. Use / for commands, & sessions, # issues…"},
+    {"interactive":"Ask anything. Use / for commands, & sessions, @ files…","plan":"Plan a task. Use / for commands, & sessions, @ files…","autopilot":"Delegate a task. Use / for commands, & sessions, @ files…"}
+  ],
+  "workflowTriggerLabel-": [
+    {"daily":"Daily","weekly":"Weekly","hourly":"Hourly","manual":"Manual"}
+  ]
+}

@@ -89,7 +89,7 @@ test('older mixed-language translations are corrected at the display boundary', 
       .replace('__ZH_DICTIONARY__', () => JSON.stringify(dictionary)));
     for (const [source, target] of Object.entries(reviewed)) {
       assert.equal(dom.window.__copilotZhText(source), target, source);
-      if (base[source] && base[source] !== target && !Object.hasOwn(base, base[source])) {
+      if (base[source] && base[source] !== target && !Object.values(reviewed).includes(base[source]) && !Object.hasOwn(base, base[source])) {
         assert.equal(dom.window.__copilotZhText(base[source]), target, source);
       }
     }

@@ -1,4 +1,10 @@
-# 第三方词典致谢与许可
+# 第三方资源致谢与许可
+
+## Univer 中文语言资源
+
+`work/localization/vendor/univer/zh-CN.json` 来自 DreamNum Co., Ltd. 及 Univer 贡献者发布的 Univer 0.24.0 七个官方 preset 的简体中文语言数据，采用 Apache-2.0 许可。版本、来源包、SHA-512 归档完整性和生成文件 SHA-256 见同目录 `manifest.json`，完整许可和署名见 `LICENSE`、`NOTICE`。提取器只静态读取并合并数据对象，不复制或执行引擎代码。构建时额外补齐中文包中仍为英文的两个按钮标签（Update / Delete），不修改已保存的官方资源数据。
+
+## 参考词典
 
 本项目的界面译文参考了以下公开项目。两者提供 MIT 许可的词典；本项目不复制它们的 Windows 注入器、官方应用二进制或安装包。
 

@@ -24,3 +24,32 @@ test('actual mode dropdown contains Chinese names and descriptions with unchange
  for(const label of ['交互式','规划','自动执行','逐步协作','先规划，就绪后执行','端到端执行不中断'])assert.ok(maps.some(map=>Object.values(map).includes(label)),label);
  assert.match(source,/badge:[`"]实验性[`"]/);
 });
+test('actual system event renderer localizes compaction counts but keeps supplied error details',()=>{
+ const file=fs.readdirSync(dir).find(name=>name.startsWith('Conversation-'));
+ const source=fs.readFileSync(dir+'/'+file,'utf8');let renderer;
+ walk.simple(acorn.parse(source,{ecmaVersion:'latest',sourceType:'module'}),{FunctionDeclaration(node){
+  if(node.id.name==='p8')renderer=source.slice(node.start,node.end);
+ }});
+ assert.ok(renderer,'production compaction renderer missing');
+ const render=vm.runInNewContext('('+renderer+')',{globalThis:dom.window,zie:String});
+ assert.equal(render({messagesRemoved:1,tokensRemoved:120}),'已压缩对话，已移除 1 条消息, 约 120 个词元');
+ assert.equal(render({messagesRemoved:2}),'已压缩对话，已移除 2 条消息');
+ assert.equal(render({status:'failed',error:'Keep this server error'}),'压缩对话失败。Keep this server error');
+ const reasoningFile=fs.readdirSync(dir).find(name=>name.startsWith('ReasoningProgress-'));
+ const reasoning=fs.readFileSync(dir+'/'+reasoningFile,'utf8');
+ assert.match(reasoning,/思考了 \$\{Kt\(c,s\)\} 秒/);
+ assert.doesNotMatch(reasoning,/Thought for \$\{/);
+});
+test('actual spreadsheet canvas overlays the official Chinese UI locale without changing workbook locale',()=>{
+ const file=fs.readdirSync(dir).find(name=>name.startsWith('UniverWorkbookCanvas-'));
+ const source=fs.readFileSync(dir+'/'+file,'utf8');
+ assert.equal((source.match(/globalThis\.__copilotZhUniverLocale/g)||[]).length,1);
+ assert.ok(source.includes('locale:Bc.EN_US,locales:{[Bc.EN_US]:'));
+ const bootstrapPath=[dir+'/first-paint-theme.js',dir+'/../first-paint-theme.js'].find(file=>fs.existsSync(file));
+ assert.ok(bootstrapPath,'generated or re-extracted bootstrap is missing');
+ const bootstrap=fs.readFileSync(bootstrapPath,'utf8');
+ assert.ok(bootstrap.includes('globalThis.__copilotZhUniverLocale'));
+ assert.ok(bootstrap.includes('"undo":"撤销"'));
+ assert.ok(bootstrap.includes('"update":"更新"'));
+ assert.ok(bootstrap.includes('"delete":"删除"'));
+});

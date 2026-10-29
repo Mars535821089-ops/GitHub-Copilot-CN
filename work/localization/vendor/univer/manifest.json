@@ -1,0 +1,56 @@
+{
+  "version": "0.24.0",
+  "license": "Apache-2.0",
+  "localeSha256": "992a5e2a6bb4e56a9987c60f214a623456936285f6dea0779f0146c4fcd0600b",
+  "packages": [
+    {
+      "name": "@univerjs/preset-sheets-core",
+      "version": "0.24.0",
+      "url": "https://registry.npmjs.org/@univerjs/preset-sheets-core/-/preset-sheets-core-0.24.0.tgz",
+      "integrity": "sha512-ww2XMB2pxBY0y8ONgNqkSMX67fP7LrDpiWZbKtUGmc2RU55G4j/BSBhwmeE24X7xUqbHdPqD62Z3ohV2MB/WRQ==",
+      "source": "package/lib/umd/locales/zh-CN.js"
+    },
+    {
+      "name": "@univerjs/preset-sheets-conditional-formatting",
+      "version": "0.24.0",
+      "url": "https://registry.npmjs.org/@univerjs/preset-sheets-conditional-formatting/-/preset-sheets-conditional-formatting-0.24.0.tgz",
+      "integrity": "sha512-Evspezw8njbfjLVFQKO8cjIa521pKbPSFpUw7CYi6YW1xpj4FGP7AC1Q7U6LIMrDsfDv3krOexWP22r8K2Pytw==",
+      "source": "package/lib/umd/locales/zh-CN.js"
+    },
+    {
+      "name": "@univerjs/preset-sheets-data-validation",
+      "version": "0.24.0",
+      "url": "https://registry.npmjs.org/@univerjs/preset-sheets-data-validation/-/preset-sheets-data-validation-0.24.0.tgz",
+      "integrity": "sha512-qjnEMHwjV0MfJBVHjGVO+Osxw6Oxd2uz2wnUn7eKvYNSFpqyVJMaWO1pIVLjHE161jq666OYv9iH5Iocbnxqxw==",
+      "source": "package/lib/umd/locales/zh-CN.js"
+    },
+    {
+      "name": "@univerjs/preset-sheets-drawing",
+      "version": "0.24.0",
+      "url": "https://registry.npmjs.org/@univerjs/preset-sheets-drawing/-/preset-sheets-drawing-0.24.0.tgz",
+      "integrity": "sha512-LNw4Yfn7iDI+6HlUzndw1yumBTbDzGLSeW9pIJEKp0BEGG4fWY+BE1bDDZYwWYZ3c32kKEOzdS0FYHuUdeXjcA==",
+      "source": "package/lib/umd/locales/zh-CN.js"
+    },
+    {
+      "name": "@univerjs/preset-sheets-filter",
+      "version": "0.24.0",
+      "url": "https://registry.npmjs.org/@univerjs/preset-sheets-filter/-/preset-sheets-filter-0.24.0.tgz",
+      "integrity": "sha512-ElFn1d5f0/cMzNIw3tI9aciLqvRLB5YvT+aW7U5VFi9tthbTpLtCOoUdttk2XOhwT19RnYAnlTtZIwU1cP30Lw==",
+      "source": "package/lib/umd/locales/zh-CN.js"
+    },
+    {
+      "name": "@univerjs/preset-sheets-hyper-link",
+      "version": "0.24.0",
+      "url": "https://registry.npmjs.org/@univerjs/preset-sheets-hyper-link/-/preset-sheets-hyper-link-0.24.0.tgz",
+      "integrity": "sha512-XRKvwQmj9P3ZMvgC+j6R4kDMjlZNLZEVk31cejZS6LzbbsvbBMgh296Mhcy/2gqgKjFDI/yn1Rj7V58O8WeNkg==",
+      "source": "package/lib/umd/locales/zh-CN.js"
+    },
+    {
+      "name": "@univerjs/preset-sheets-note",
+      "version": "0.24.0",
+      "url": "https://registry.npmjs.org/@univerjs/preset-sheets-note/-/preset-sheets-note-0.24.0.tgz",
+      "integrity": "sha512-foF/Zq4FzTN/4FZ3j02RG4WI22oeX4XNyGSJPOvvSc/YNRyulGc92hrcGF/G4NXWCu5zNBztmqRoug3TGPXyjQ==",
+      "source": "package/lib/umd/locales/zh-CN.js"
+    }
+  ]
+}

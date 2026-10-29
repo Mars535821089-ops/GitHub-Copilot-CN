@@ -4,6 +4,7 @@ root="$(cd "$(dirname "$0")/.." && pwd)"
 source_app="$root/dist/GitHub Copilot 中文版.app"
 installed='/Applications/GitHub Copilot.app'
 known_previous='cd09695c67ac6368894aad6c5c2fb4d74871d9972b864b3b724855762006481b'
+known_mode_fix='36371c8a1c5522faf48f2b5a5339a707c2899bac0143cc2a741d33330857c6e8'
 if [ ! -f "$source_app/Contents/MacOS/github" ] || [ ! -f "$installed/Contents/MacOS/github" ]; then
   echo '需要已构建的中文版和已安装的受支持旧中文版；未修改安装。' >&2
   exit 2
@@ -15,7 +16,7 @@ if [ "$new_sha" = "$old_sha" ]; then
   echo '安装目录已是本次构建；当前窗口如仍显示旧内容，请正常退出后重新打开。'
   exit 0
 fi
-if [ "$old_sha" != "$known_previous" ]; then
+if [ "$old_sha" != "$known_previous" ] && [ "$old_sha" != "$known_mode_fix" ]; then
   echo "已安装应用不是已审查的旧中文版：$old_sha；未替换未知版本或官方原版。" >&2
   exit 3
 fi

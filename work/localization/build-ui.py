@@ -38,6 +38,9 @@ if marker in first:
  first=first.split(marker,1)[0]
 fallback=(r/'ui-runtime.js').read_text().replace('__ZH_DICTIONARY__',json.dumps(d,ensure_ascii=False,separators=(',',':')))
 native=(r/'native-menu.js').read_text().replace('__NATIVE_DICTIONARY__',json.dumps(d,ensure_ascii=False,separators=(',',':')))
-(assets/'first-paint-theme.js').write_text(first+';\n'+fallback+';\n'+native)
+univer_locale=json.loads((r/'vendor/univer/zh-CN.json').read_text())
+univer_locale['button'].update({'update':'更新','delete':'删除'})
+univer=(r/'univer-runtime.js').read_text().replace('__UNIVER_ZH_CN__',json.dumps(univer_locale,ensure_ascii=False,separators=(',',':')))
+(assets/'first-paint-theme.js').write_text(first+';\n'+fallback+';\n'+native+';\n'+univer)
 html=(args.input_dir/'index.html').read_text().replace('<html lang="en">','<html lang="zh-CN">');(assets/'index.html').write_text(html)
 subprocess.run(['node','--check',str(assets/'first-paint-theme.js')],check=True)
