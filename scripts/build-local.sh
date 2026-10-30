@@ -44,6 +44,7 @@ node work/localization/audit-ui.cjs work/research/local-ui-assets/assets work/lo
 node --test work/localization/test-localize.cjs work/localization/test-runtime.cjs work/localization/test-native-menu.cjs work/localization/test-real-settings.cjs work/localization/test-ui-surfaces.cjs work/localization/test-real-source-surfaces.cjs work/localization/test-dictionary.cjs work/localization/test-audit-ui.cjs work/localization/test-univer-locale.cjs
 .venv/bin/python work/localization/test-resource-pool.py
 .venv/bin/python work/localization/test-upstream-check.py
+.venv/bin/python work/localization/test-official-release.py
 .venv/bin/python work/localization/test-build-ui.py
 ditto "$backup" "$out"
 .venv/bin/python work/localization/patch-app.py "$out/Contents/MacOS/github"
