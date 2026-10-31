@@ -2,9 +2,11 @@
 Reassigns embedded resource pointers inside their already-rebased table fields.
 No Mach-O segment resizing, executable code patching, or OS policy changes.
 """
-import concurrent.futures,hashlib,json,pathlib,struct,sys,time,brotli
+import concurrent.futures,hashlib,json,os,pathlib,struct,sys,time,brotli
 from resource_pool import allocate
-ORIGINAL=pathlib.Path('outputs/恢复原版/GitHub Copilot.app/Contents/MacOS/github')
+ORIGINAL=pathlib.Path(os.environ.get(
+ 'COPILOT_ORIGINAL_EXECUTABLE',
+ 'outputs/恢复原版/GitHub Copilot.app/Contents/MacOS/github'))
 TARGET=pathlib.Path(sys.argv[1] if len(sys.argv)>1 else 'work/localization/GitHub Copilot 中文版.app/Contents/MacOS/github')
 ROOT=pathlib.Path('work/localization'); ASSETS=pathlib.Path('work/research/local-ui-assets'); TRANSLATED=ROOT/'translated-assets'
 buf=ORIGINAL.read_bytes();assert hashlib.sha256(buf).hexdigest()==json.load(open('work/research/local-ui-manifest.json'))['app_sha256'],'Original version changed; stop'

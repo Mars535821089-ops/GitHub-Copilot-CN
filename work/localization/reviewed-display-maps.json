@@ -1,7 +1,7 @@
 {
   "App-": [
     {"topLeft":"Top left","topCenter":"Top center","topRight":"Top right","bottomLeft":"Bottom left","bottomCenter":"Bottom center","bottomRight":"Bottom right"},
-    {"general":"General","notifications":"Notifications","sessions":"Sessions","computer-use":"Computer Use","themes":"Themes","accessibility":"Accessibility","mcp":"MCP servers","plugins":"Plugins","skills":"Skills","extensions":"Customize","account":"Accounts","experimental":"Experimental","agency":"Agency","voice":"Voice dictation","model-providers":"Model providers","developers":"Debug tools","environments":"Environments"},
+    {"general":"General","notifications":"Notifications","sessions":"Sessions","computer-use":"Computer Use","themes":"Themes","accessibility":"Accessibility","account":"Accounts","experimental":"Experimental","exp-flags":"ExP flags","agency":"Agency","voice":"Voice dictation","model-providers":"Model providers","developers":"Debug tools","environments":"Environments"},
     {"general":"General","appearance":"Appearance","themes":"Themes","chat":"Chat","accessibility":"Accessibility","mcp":"MCP servers","account":"Accounts","experimental":"Experimental","developers":"Debug tools"},
     {"prs":"Pull requests","branches":"Branches","issues":"Issues"},
     {"answer-required":"Automation needs your input","interrupted":"Automation was interrupted","working":"Automation is running"},
@@ -85,19 +85,18 @@
     {"cloning_repo":"Cloning repository...","opening_repo":"Opening repository...","initializing":{"identifier":true},"syncing":"Fetching latest changes...","verifying":"Resolving base branch...","cleaning":"Cleaning previous repository...","creating_worktree":"Creating git worktree...","ready":"Session is ready"},
     {"shell":"Shell","read":"Read","edit":"Edit","mcp":"MCP tool","agent":"Agent","hook":"Hook","compaction":"Compaction","thinking":"Thinking","other":"Other"}
   ],
-  "WorkflowGalleryRoute-": [
-    {"added":"Added","updated":"Updated","deleted":"Removed","unknown":"Unknown change"}
-  ],
   "WorkflowRunRoute-": [
     {"manual":"Manual","schedule":"Scheduled","catch_up":"Catch-up"}
   ],
   "run-": [
     {"checking":"Checking for updates","downloading":"Downloading update","installing":"Installing update"},
-    {"needs-input":"Needs input","working":"Working","done":"Done"},
+    {"needs-input":"Needs input","working":"Working","done":"Done"}
+  ],
+  "useWebSocketTransport-": [
     {"needs-input":"Needs input","ready-to-merge":"Ready to merge","in-progress":"Working","open":"Open","idle":"Done"}
   ],
   "streamingMarkdownBlocks-": [
-    {"available":null,"host_reconnecting":"Unavailable — reconnecting","recovering_host":"Unavailable — recovering environment","reattaching":"Connecting","unknown":"Availability unknown","session_missing_on_host":"Unavailable — session not found on environment","environment_removed":"Unavailable — environment not found","environment_unsupported":"Unavailable — environment no longer supported","authentication_required":"Unavailable — sign in required","host_failed":"Unavailable — connection failed"}
+    {"available":null,"host_reconnecting":"Reconnecting","recovering_host":"Unavailable — recovering environment","reattaching":"Connecting","unknown":"Availability unknown","session_missing_on_host":"Unavailable — session not found on environment","environment_removed":"Unavailable — environment not found","environment_unsupported":"Unavailable — environment no longer supported","authentication_required":"Unavailable — sign in required","host_failed":"Unavailable — connection failed"}
   ],
   "switch-": [
     {"manual":"Always ask","assisted":{"member":"label"},"allow-all":"Approve all"},

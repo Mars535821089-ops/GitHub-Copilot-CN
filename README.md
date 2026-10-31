@@ -1,8 +1,8 @@
 # GitHub Copilot-CN（macOS 独立桌面版）
 
-适用于 GitHub Copilot 独立 macOS 应用 1.1.33（arm64）的非官方简体中文界面补丁源码。本仓库提供 UI 文本审查、翻译、资源重建、结构验证和本地模型库签名修复工具。它不包含 GitHub 官方应用、可执行文件、模型权重、账户数据或签名证书。
+适用于 GitHub Copilot 独立 macOS 应用 1.1.34（arm64）的非官方简体中文界面补丁源码。本仓库提供 UI 文本审查、翻译、资源重建、结构验证和本地模型库签名修复工具。它不包含 GitHub 官方应用、可执行文件、模型权重、账户数据或签名证书。
 
-**维护状态：**截至 2026-10-29，GitHub Copilot 桌面应用没有文档化的 UI 语言包或本地化扩展接口，不能像 VS Code 一样通过受支持的语言包跟随产品更新。当前构建仍绑定到 1.1.33 的原版主程序 SHA-256；遇到其他版本会停止。更新后可运行 `python3 scripts/check-upstream.py '/Applications/GitHub Copilot.app'`，只读检查版本和资源指纹，并在 `outputs/upstream-review-*` 生成精确词典候选差异供审查；它不会把候选译文应用到应用包。详情、限制和更新流程见 [低维护本地化维护方式](docs/低维护本地化维护方式.md)。
+**维护状态：**截至 2026-10-31，GitHub Copilot 桌面应用没有文档化的 UI 语言包或本地化扩展接口，不能像 VS Code 一样通过受支持的语言包跟随产品更新。最新支持基线为 1.1.34，其官方 arm64 包、GitHub 签名、主程序和 1,158 个可解码资源均已核对；未知版本或资源指纹仍会停止。运行 `python3 scripts/check-official-release.py` 可交叉核对官方最新稳定版与本机 build/二进制指纹；`python3 scripts/check-upstream.py '/Applications/GitHub Copilot.app'` 则只读检查具体资源。未知资源差异只生成本地候选供审查，不会自动套用到应用包。详情见 [低维护本地化维护方式](docs/低维护本地化维护方式.md)。
 
 ## 汉化补全与人工校订
 
@@ -25,9 +25,9 @@
 
 ## 本地构建
 
-先运行 `python3 scripts/check-official-release.py`，通过 `gh` 只读交叉核对官方 `github/app` 最新稳定 Release 和更新器 `latest.json`，输出本机版本/build、主程序 SHA-256、官方版本和归档摘要。版本相同**不代表补丁兼容**，仍须运行资源检查和真实源码测试；未知指纹不会因此获准安装。版本不一致返回 3，来源不一致或查询失败返回 2，不修改应用。2026-10-30 官方最新仍为 [v1.1.33](https://github.com/github/app/releases/tag/v1.1.33)，本机已安装的本地汉化构建通过重新提取验证，未为检查版本而重装或重启。
+先运行 `python3 scripts/check-official-release.py`，通过 `gh` 只读交叉核对官方 `github/app` 最新稳定 Release 和更新器 `latest.json`，输出本机版本/build、主程序 SHA-256、官方版本和归档摘要。版本相同**不代表补丁兼容**，仍须运行资源检查和真实源码测试；未知指纹不会因此获准安装。版本不一致返回 3，来源不一致或查询失败返回 2，不修改应用。截至 2026-10-31，官方最新为 [v1.1.34](https://github.com/github/app/releases/tag/v1.1.34)。
 
-需要 macOS arm64、Python 3、Node.js/npm、Xcode 命令行工具、原版官方应用 1.1.33，以及本机有效的 Apple Development 签名身份。先用 security find-identity -v -p codesigning 查看可用身份。使用**未打补丁的官方原版**，不要把现有中文版当作原版输入。
+需要 macOS arm64、Python 3、Node.js/npm、Xcode 命令行工具、与当前基线指纹完全匹配的官方原版 1.1.34，以及本机有效的 Apple Development 签名身份。先用 security find-identity -v -p codesigning 查看可用身份。使用**未打补丁的官方原版**，不要把现有中文版当作原版输入。
 
     ./scripts/build-local.sh '/path/to/original/GitHub Copilot.app' 'YOUR_LOCAL_SIGNING_IDENTITY'
 

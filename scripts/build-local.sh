@@ -9,7 +9,19 @@ py="$(printenv COPILOT_PYTHON 2>/dev/null || printf python3)"
 cd "$root"
 source_app="$1"
 identity="$2"
-backup='outputs/恢复原版/GitHub Copilot.app'
+app_version="$("$py" - "$source_app/Contents/Info.plist" <<'PY'
+import plistlib,sys
+with open(sys.argv[1],'rb') as stream:
+    print(plistlib.load(stream).get('CFBundleShortVersionString',''))
+PY
+)"
+if [ -z "$app_version" ]; then
+  echo '官方应用缺少版本号；未构建。' >&2
+  exit 2
+fi
+legacy_backup='outputs/恢复原版/GitHub Copilot.app'
+backup="outputs/恢复原版/$app_version/GitHub Copilot.app"
+if [ "$app_version" = '1.1.33' ] && [ -d "$legacy_backup" ]; then backup="$legacy_backup"; fi
 out='dist/GitHub Copilot 中文版.app'
 if [ ! -f "$source_app/Contents/MacOS/github" ]; then
   echo '输入必须是完整的官方原版 .app' >&2
@@ -28,6 +40,7 @@ if [ ! -d work/runtime/node_modules/acorn ]; then
 fi
 .venv/bin/python scripts/check-upstream.py "$source_app"
 mkdir -p 'outputs/恢复原版' dist
+mkdir -p "$(dirname "$backup")"
 if [ ! -e "$backup" ]; then
   ditto "$source_app" "$backup"
 fi
@@ -37,7 +50,7 @@ expected=json.loads(pathlib.Path('work/research/local-ui-manifest.json').read_te
 actual=hashlib.sha256(pathlib.Path(sys.argv[1]).read_bytes()).hexdigest()
 if actual!=expected: raise SystemExit('本地原版副本与版本约束不一致；未覆盖已有副本')
 PY
-.venv/bin/python work/research/inspect_embedded_ui.py
+.venv/bin/python work/research/inspect_embedded_ui.py --app-executable "$backup/Contents/MacOS/github"
 .venv/bin/python work/localization/build-ui.py
 node work/localization/verify-ui-structure.cjs
 node work/localization/audit-ui.cjs work/research/local-ui-assets/assets work/localization/translated-assets work/localization/translated-assets/full-ui-audit.json
@@ -47,7 +60,7 @@ node --test work/localization/test-localize.cjs work/localization/test-runtime.c
 .venv/bin/python work/localization/test-official-release.py
 .venv/bin/python work/localization/test-build-ui.py
 ditto "$backup" "$out"
-.venv/bin/python work/localization/patch-app.py "$out/Contents/MacOS/github"
+COPILOT_ORIGINAL_EXECUTABLE="$backup/Contents/MacOS/github" .venv/bin/python work/localization/patch-app.py "$out/Contents/MacOS/github"
 for name in Microsoft.AI.Foundry.Local.Core.dylib libonnxruntime.dylib libonnxruntime-genai.dylib CopilotMediaRemoteAdapter.dylib; do
   codesign --force --sign "$identity" --preserve-metadata=identifier,entitlements,flags,runtime --timestamp=none "$out/Contents/Frameworks/$name"
 done
